@@ -1,6 +1,7 @@
 # dependencies
+my-project/
 node_modules/
-my-project/node_modules/
+
 
 # next
 .next/
