@@ -29,7 +29,7 @@ The image editing functionality uses the following API method:
 ```javascript
 await zai.images.generations.edit({
   prompt: string,              // Required: Description of the edit to apply
-  images: [{ url: string }],  // Required: Array with image URL or base64 data URL
+  image: { url: imageSource }, // Required: Array with image URL or base64 data URL
   size?: string,              // Optional: Output size (default: '1024x1024')
   model?: string              // Optional: Model name
 })
