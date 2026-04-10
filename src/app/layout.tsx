@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Serif_Display, Plus_Jakarta_Sans, Fira_Code } from 'next/font/google';
 import { Toaster } from 'sonner';
 import { FACEBOOK_URL, INSTAGRAM_URL, SITE_CONFIG } from '@/lib/constants';
+import { ErrorBoundary } from '@/components/error-boundary';
 import './globals.css';
 
 const dmSerif = DM_Serif_Display({
@@ -113,18 +114,20 @@ export default function RootLayout({
       <body
         className={`${dmSerif.variable} ${jakarta.variable} ${firaCode.variable} antialiased`}
       >
-        <a href="#main-content" className="skip-to-content">
-          Pular para conteúdo
-        </a>
-        {children}
-        <Toaster
-          position="top-center"
-          richColors
-          closeButton
-          toastOptions={{
-            duration: 5000,
-          }}
-        />
+        <ErrorBoundary>
+          <a href="#main-content" className="skip-to-content">
+            Pular para conteúdo
+          </a>
+          {children}
+          <Toaster
+            position="top-center"
+            richColors
+            closeButton
+            toastOptions={{
+              duration: 5000,
+            }}
+          />
+        </ErrorBoundary>
       </body>
     </html>
   );

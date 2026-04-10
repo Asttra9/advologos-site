@@ -64,7 +64,7 @@ export function NewsletterSignup() {
             placeholder="seu@email.com"
             required
             aria-label="E-mail para newsletter"
-            className="bg-[rgba(255,255,255,0.03)] border border-[rgba(184,196,204,0.15)] rounded-lg px-4 py-2.5 text-[var(--editorial)] text-[13px] placeholder:text-[var(--nevoa)] focus:border-[var(--crimson)] focus:outline-none transition-colors min-w-0 flex-1"
+            className="newsletter-input-glow bg-[rgba(255,255,255,0.03)] border border-[rgba(184,196,204,0.15)] rounded-lg px-4 py-2.5 text-[var(--editorial)] text-[13px] placeholder:text-[var(--nevoa)] focus:outline-none min-w-0 flex-1"
           />
           <button
             type="submit"

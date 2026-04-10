@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
+import { headers } from 'next/headers';
 import {
   verifyPassword,
   getAdminPasswordHash,
@@ -10,7 +11,41 @@ import {
   SESSION_COOKIE_OPTIONS,
 } from '@/lib/admin-auth';
 
+// ── Rate limiting (in-memory, 5 attempts per IP per 15 min) ──
+const loginAttempts = new Map<string, { count: number; firstAttempt: number }>();
+const MAX_ATTEMPTS = 5;
+const WINDOW_MS = 15 * 60 * 1000;
+
+function isRateLimited(ip: string): boolean {
+  const entry = loginAttempts.get(ip);
+  if (!entry) return false;
+  const elapsed = Date.now() - entry.firstAttempt;
+  if (elapsed > WINDOW_MS) {
+    loginAttempts.delete(ip);
+    return false;
+  }
+  return entry.count >= MAX_ATTEMPTS;
+}
+
+function recordFailedAttempt(ip: string): void {
+  const entry = loginAttempts.get(ip);
+  if (!entry || Date.now() - entry.firstAttempt > WINDOW_MS) {
+    loginAttempts.set(ip, { count: 1, firstAttempt: Date.now() });
+  } else {
+    entry.count++;
+  }
+}
+
 export async function POST(request: Request) {
+  // Rate limit check
+  const headersList = await headers();
+  const ip = headersList.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { error: 'Muitas tentativas. Tente novamente em 15 minutos.' },
+      { status: 429 }
+    );
+  }
   try {
     const body = await request.json();
     const { password } = body as { password?: string };
@@ -26,6 +61,7 @@ export async function POST(request: Request) {
     const isValid = verifyPassword(password, expectedHash);
 
     if (!isValid) {
+      recordFailedAttempt(ip);
       return NextResponse.json(
         { error: 'Senha incorreta.' },
         { status: 401 }

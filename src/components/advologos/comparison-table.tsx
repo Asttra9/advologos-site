@@ -313,7 +313,7 @@ export function ComparisonTable() {
                       >
                         <span className="flex flex-col items-center justify-center text-center">
                           <span
-                            className={`text-[14px] font-semibold ${
+                            className={`text-[clamp(15px,2vw,18px)] font-bold ${
                               price.accent ? 'text-[var(--crimson-lt)]' : 'text-[var(--prata)]'
                             }`}
                           >

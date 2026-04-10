@@ -56,9 +56,9 @@ function ServiceCard({
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`group h-full shimmer-on-hover card-glow bg-[rgba(255,255,255,0.025)] border p-[5px] rounded-[1.5rem] transition-[transform,box-shadow] duration-[300ms] ease-out cursor-default hover:-translate-y-1 [transform-style:preserve-3d] ${
+        className={`group h-full shimmer-on-hover card-glow bg-[rgba(255,255,255,0.025)] border p-[5px] rounded-[1.5rem] transition-[transform,box-shadow] duration-[300ms] ease-out cursor-default hover:-translate-y-1 [transform-style:preserve-3d] service-card-top-glow ${
           service.featured
-            ? 'scale-[1.03] border-[rgba(139,30,45,0.4)] shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_40px_rgba(139,30,45,0.15)] hover:scale-[1.03] hover:shadow-[0_24px_48px_rgba(0,0,0,0.5),0_0_50px_rgba(139,30,45,0.2)]'
+            ? 'glass-card-reflection scale-[1.03] border-[rgba(139,30,45,0.4)] shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_40px_rgba(139,30,45,0.15)] hover:scale-[1.03] hover:shadow-[0_24px_48px_rgba(0,0,0,0.5),0_0_50px_rgba(139,30,45,0.2)] service-card-featured-glow'
             : 'border-[rgba(184,196,204,0.1)]'
         }`}
       >
@@ -87,13 +87,9 @@ function ServiceCard({
             {service.description}
           </p>
 
-          <ul className="flex flex-col gap-2.5 mb-3 list-none">
+          <ul className="service-card-items-list flex flex-col gap-2.5 mb-3">
             {service.items.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-2.5 text-[13px] text-[var(--prata-lt)] leading-[1.5]"
-              >
-                <span className="w-1 h-1 rounded-full bg-[var(--crimson)] flex-shrink-0 mt-1.5" />
+              <li key={item}>
                 {item}
               </li>
             ))}
@@ -107,13 +103,9 @@ function ServiceCard({
                   Exclusivo assinatura
                 </span>
               </div>
-              <ul className="flex flex-col gap-2 list-none">
+              <ul className="service-card-items-list flex flex-col gap-2">
                 {service.monthlyExtraItems.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2.5 text-[13px] text-[var(--editorial)] leading-[1.5]"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[var(--crimson-lt)] flex-shrink-0 mt-1.5" />
+                  <li key={item} className="text-[13px] text-[var(--editorial)] leading-[1.5]">
                     {item}
                   </li>
                 ))}
@@ -124,8 +116,8 @@ function ServiceCard({
           <div className="pricing-transition mt-auto font-serif text-[13px] text-[var(--nevoa)] mb-4 pt-4">
             {showMonthly ? (
               <>
-                A partir de&nbsp;
-                <span className="text-[22px] text-[var(--editorial)] tracking-[-0.02em]">
+                <span className="pricing-live-dot">A partir de</span>{'  '}
+                <span className="service-card-price-tag text-[clamp(36px,6vw,52px)] text-[var(--editorial)] tracking-[-0.02em]">
                   {service.monthlyPrice}
                 </span>
                 {service.monthlyContractLabel && (
@@ -136,8 +128,8 @@ function ServiceCard({
               </>
             ) : (
               <>
-                A partir de&nbsp;
-                <span className="text-[22px] text-[var(--editorial)] tracking-[-0.02em]">
+                <span className="pricing-live-dot">A partir de</span>{'  '}
+                <span className="service-card-price-tag text-[clamp(36px,6vw,52px)] text-[var(--editorial)] tracking-[-0.02em]">
                   {service.price}
                 </span>
               </>

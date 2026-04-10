@@ -37,6 +37,18 @@ export function CookieConsent() {
     };
   }, []);
 
+  // Add/remove body padding when consent banner is visible
+  useEffect(() => {
+    if (visible && !isAnimating && !dismissed) {
+      document.body.classList.add('cookie-banner-visible');
+    } else {
+      document.body.classList.remove('cookie-banner-visible');
+    }
+    return () => {
+      document.body.classList.remove('cookie-banner-visible');
+    };
+  }, [visible, isAnimating, dismissed]);
+
   const handleHide = useCallback((consentValue: string) => {
     localStorage.setItem(CONSENT_KEY, consentValue);
     setIsAnimating(true);
@@ -80,7 +92,7 @@ export function CookieConsent() {
       role="dialog"
       aria-label="Preferências de cookies"
       aria-describedby="cookie-desc"
-      className={`fixed bottom-6 left-1/2 z-[160] w-[calc(100%-32px)] max-w-[800px] -translate-x-1/2 transition-all duration-400 ease-out ${
+      className={`fixed bottom-4 left-1/2 z-[160] w-[calc(100%-32px)] max-w-[800px] -translate-x-1/2 transition-all duration-400 ease-out ${
         visible && !isAnimating
           ? 'translate-y-0 opacity-100'
           : 'translate-y-4 opacity-0 pointer-events-none'
@@ -105,9 +117,16 @@ export function CookieConsent() {
                 Utilizamos cookies para melhorar sua experiência, analisar o tráfego
                 e personalizar conteúdo. Cookies necessários são essenciais para o
                 funcionamento do site. Ao aceitar, você concorda com nossa{' '}
-                <span className="text-[var(--prata)] underline underline-offset-2 decoration-[var(--prata)]/30 cursor-pointer hover:decoration-[var(--prata)]/60 transition-colors">
+                <button
+                  type="button"
+                  onClick={() => {
+                    const dialog = document.getElementById('privacy-policy-dialog');
+                    dialog?.showModal();
+                  }}
+                  className="text-[var(--prata)] underline underline-offset-2 decoration-[var(--prata)]/30 cursor-pointer hover:decoration-[var(--prata)]/60 transition-colors bg-transparent border-none text-[12px] p-0 font-[inherit]"
+                >
                   Política de Privacidade
-                </span>
+                </button>
                 .
               </p>
             </div>

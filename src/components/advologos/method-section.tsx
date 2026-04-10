@@ -9,6 +9,7 @@ export function MethodSection() {
   const [activeStep, setActiveStep] = useState(0);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
   const asideRef = useRef<HTMLDivElement>(null);
+  const stepNumRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -51,11 +52,28 @@ export function MethodSection() {
     aside.style.transform = `translateY(${offset}px)`;
   }, []);
 
+  // Parallax effect for step numbers (CSS only via CSS custom property)
+  const handleStepParallax = useCallback(() => {
+    if (window.innerWidth < 768) return;
+    stepNumRefs.current.forEach((ref) => {
+      if (!ref) return;
+      const rect = ref.getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      const offset = (rect.top - viewportCenter) * 0.08;
+      ref.style.setProperty('--parallax-y', `${offset}px`);
+    });
+  }, []);
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    const onScroll = () => {
+      handleScroll();
+      handleStepParallax();
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+    handleStepParallax();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [handleScroll, handleStepParallax]);
 
   return (
     <section
@@ -65,9 +83,7 @@ export function MethodSection() {
     >
       <div className="max-w-[1160px] mx-auto px-5 md:px-12">
         <ScrollReveal>
-          <div className="section-divider mb-14">
-            <div className="section-divider-diamond" />
-          </div>
+          <div className="section-wave-separator mb-14" />
         </ScrollReveal>
 
         <ScrollReveal>
@@ -92,25 +108,26 @@ export function MethodSection() {
               <div className="flex flex-col gap-0.5">
                 {METHOD_STEPS.map((step, index) => (
                   <Fragment key={step.num}>
-                    <div
-                      className="bg-[rgba(255,255,255,0.025)] border border-[rgba(184,196,204,0.08)] p-1 rounded-[1rem] transition-transform duration-500 [transition-timing-function:var(--ease-spring)] hover:translate-x-1 shimmer-on-hover card-glow"
-                    >
-                    <div className="bg-[var(--ardosia)] rounded-[calc(1rem-4px)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] px-4 py-4 md:px-6 md:py-[22px] grid grid-cols-[36px_1fr] gap-[18px] items-start">
-                      <div className="font-serif text-[28px] text-[var(--crimson-lt)] leading-none font-normal">
-                        {step.num}
-                      </div>
-                      <div>
-                        <div className="text-[14px] font-semibold text-[var(--editorial)] mb-1">
-                          {step.title}
+                    <div className="method-step-card bg-[rgba(255,255,255,0.025)] border border-[rgba(184,196,204,0.08)] p-1 rounded-[1rem] transition-all duration-500 [transition-timing-function:var(--ease-spring)] hover:translate-x-1 shimmer-on-hover card-glow">
+                      <div className="bg-[var(--ardosia)] rounded-[calc(1rem-4px)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] px-4 py-4 md:px-6 md:py-[22px] grid grid-cols-[clamp(28px,8vw,36px)_1fr] gap-[clamp(12px,3vw,18px)] items-start">
+                        <div
+                          ref={(el) => { stepNumRefs.current[index] = el; }}
+                          className="method-step-num font-serif text-[clamp(24px,5vw,28px)] text-[var(--crimson-lt)] leading-none font-normal"
+                        >
+                          {step.num}
                         </div>
-                        <div className="text-[12.5px] text-[var(--prata)] leading-[1.6] !max-w-none">
-                          {step.text}
+                        <div>
+                          <div className="text-[clamp(13.5px,2.2vw,14px)] font-semibold text-[var(--editorial)] mb-1">
+                            {step.title}
+                          </div>
+                          <div className="text-[clamp(12px,2.2vw,12.5px)] text-[var(--prata)] leading-[1.6] !max-w-none">
+                            {step.text}
+                          </div>
                         </div>
                       </div>
-                    </div>
                     </div>
                     {index < METHOD_STEPS.length - 1 && (
-                      <div className="step-connector" data-reveal>
+                      <div className="method-step-connector" data-reveal>
                         <div className="step-connector-dot" />
                       </div>
                     )}
@@ -126,7 +143,7 @@ export function MethodSection() {
               <div ref={asideRef} className="flex flex-col gap-3.5 will-change-transform">
                 {/* Quote */}
                 <div className="bg-[rgba(255,255,255,0.025)] border border-[rgba(139,30,45,0.2)] p-1.5 rounded-[1.75rem]">
-                  <div className="bg-[linear-gradient(135deg,rgba(139,30,45,0.1)_0%,rgba(26,26,34,0.95)_100%)] rounded-[calc(1.75rem-6px)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] px-10 py-12">
+                  <div className="bg-[linear-gradient(135deg,rgba(139,30,45,0.1)_0%,rgba(26,26,34,0.95)_100%)] rounded-[calc(1.75rem-6px)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] px-5 py-8 md:px-10 md:py-12">
                     <p className="font-serif text-[clamp(22px,2.8vw,30px)] text-[var(--editorial)] leading-[1.25] mb-4">
                       &ldquo;Um império pode continuar sem o imperador. Mas não há imperador sem o império.&rdquo;
                     </p>
@@ -137,16 +154,16 @@ export function MethodSection() {
                 </div>
 
                 {/* Checklist */}
-                <div className="bg-[rgba(255,255,255,0.025)] border border-[rgba(184,196,204,0.1)] p-1.25 rounded-[1.25rem]">
-                  <div className="bg-[var(--ardosia)] rounded-[calc(1.25rem-5px)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] px-7 py-7 pb-6">
-                    <div className="text-[10px] font-bold tracking-[0.16em] uppercase text-[var(--crimson-lt)] mb-5">
+                <div className="bg-[rgba(255,255,255,0.025)] border border-[rgba(184,196,204,0.1)] p-[5px] rounded-[1.25rem]">
+                  <div className="bg-[var(--ardosia)] rounded-[calc(1.25rem-5px)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] px-5 py-5 pb-4 md:px-7 md:py-7 md:pb-6">
+                    <div className="text-[clamp(9px,1.8vw,10px)] font-bold tracking-[0.16em] uppercase text-[var(--crimson-lt)] mb-5">
                       O que diferencia nossa entrega
                     </div>
                     <ul className="flex flex-col gap-3 list-none">
                       {CHECKLIST_ITEMS.map((item) => (
                         <li
                           key={item}
-                          className="flex items-center gap-3 text-[13px] text-[var(--prata)]"
+                          className="flex items-center gap-3 text-[clamp(12.5px,2.5vw,13px)] text-[var(--prata)]"
                         >
                           <span className="w-[18px] h-[18px] rounded-full bg-[rgba(139,30,45,0.15)] border border-[rgba(139,30,45,0.35)] flex-shrink-0 flex items-center justify-center">
                             <Check className="h-2.5 w-2.5 text-[var(--crimson-lt)]" />
@@ -168,10 +185,10 @@ export function MethodSection() {
         <ScrollReveal delay={4}>
           <div className="bg-[rgba(255,255,255,0.015)] border border-[rgba(184,196,204,0.06)] rounded-xl p-5">
             <div className="relative flex items-start justify-between">
-              {/* Connecting line */}
-              <div className="absolute top-[9px] left-[24px] right-[24px] h-px bg-gradient-to-r from-[var(--crimson)] via-[var(--crimson)] to-[rgba(139,30,45,0.2)] opacity-30" />
+              {/* Connecting line — gradient with animated dash */}
+              <div className="method-timeline-line absolute top-[9px] left-[24px] right-[24px] h-px bg-gradient-to-r from-[var(--crimson)] via-[var(--crimson)] to-[rgba(139,30,45,0.2)] opacity-30" />
               <div
-                className="absolute top-[9px] left-[24px] h-px bg-[var(--crimson)] opacity-60 transition-all duration-700 ease-out"
+                className="method-timeline-progress absolute top-[9px] left-[24px] h-px bg-[var(--crimson)] opacity-60 transition-all duration-700 ease-out"
                 style={{ width: `calc(${(activeStep / (METHOD_STEPS.length - 1)) * 100}% - 0px)` }}
               />
 

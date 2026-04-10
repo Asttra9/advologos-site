@@ -2,11 +2,12 @@
 
 import { useState, useEffect, useRef, useCallback, type FormEvent } from 'react';
 import { toast } from 'sonner';
-import { ArrowUpRight, CheckCircle2, RotateCcw, Loader2, Shield, Clock, CheckCircle } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, RotateCcw, Loader2, Shield, Clock, CheckCircle, MessageCircle, Sparkles } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { WHATSAPP_URL } from '@/lib/constants';
 
 interface FormData {
   name: string;
@@ -53,14 +54,12 @@ export function CTASection() {
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', whatsapp: '', message: '' });
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const formRef = useRef<HTMLFormElement | null>(null);
-  const mountedRef = useRef(false);
 
   // Load draft on mount
   useEffect(() => {
     const draft = loadDraft();
     setFormData(draft);
     setMessageLen(draft.message.length);
-    mountedRef.current = true;
   }, []);
 
   // Autosave on form data change
@@ -119,6 +118,13 @@ export function CTASection() {
     }
   };
 
+  const handleWhatsAppSubmit = () => {
+    const text = encodeURIComponent(
+      `Olá! Meu nome é ${formData.name}. E-mail: ${formData.email}. WhatsApp: ${formData.whatsapp}. Mensagem: ${formData.message}`
+    );
+    window.open(`${WHATSAPP_URL}?text=${text}`, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section
       id="cta"
@@ -147,9 +153,20 @@ export function CTASection() {
                 começa aqui.
               </h2>
 
-              <p className="text-[var(--prata)] text-[16px] leading-[1.7] max-w-[480px] mx-auto mb-11">
+              <p className="text-[var(--prata)] text-[16px] leading-[1.7] max-w-[480px] mx-auto mb-4">
                 Solicite uma proposta sem compromisso. Analisamos seu contexto e apresentamos o pacote adequado para onde você está e para onde quer chegar.
               </p>
+
+              {/* WhatsApp doubt link */}
+              <a
+                href={`${WHATSAPP_URL}?text=${encodeURIComponent('Olá, tenho uma dúvida sobre os pacotes da Advologos.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[13px] text-[var(--nevoa-lt)] hover:text-[#25D366] transition-colors duration-300 mb-8"
+              >
+                <MessageCircle className="h-3.5 w-3.5" />
+                Tem dúvidas? Fale pelo WhatsApp
+              </a>
 
               {!submitSuccess ? (
                 <form
@@ -215,7 +232,7 @@ export function CTASection() {
                       placeholder="Conte-nos sobre seu projeto e seus objetivos..."
                       rows={4}
                       required
-                      maxLength={500}
+                      maxLength={1000}
                       value={formData.message}
                       onChange={(e) => {
                         setMessageLen(e.target.value.length);
@@ -223,8 +240,10 @@ export function CTASection() {
                       }}
                       className="w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(184,196,204,0.15)] rounded-xl py-4 px-4 text-[var(--editorial)] text-sm font-[inherit] transition-all duration-300 placeholder:text-[var(--nevoa)] focus:border-[var(--crimson)] focus:bg-[rgba(255,255,255,0.05)] resize-none"
                     />
-                    <span className="text-[10px] text-[var(--nevoa)] mt-1 text-right">
-                      {messageLen}/500
+                    <span className={`text-[10px] mt-1 text-right transition-colors duration-300 ${
+                      messageLen > 900 ? 'text-[var(--crimson-lt)]' : 'text-[var(--nevoa)]'
+                    }`}>
+                      {messageLen}/1000 caracteres
                     </span>
                   </div>
 
@@ -235,38 +254,55 @@ export function CTASection() {
                     </span>
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-ripple inline-flex items-center justify-center gap-2.5 rounded-full bg-[var(--crimson)] text-[var(--editorial)] text-[12px] font-bold tracking-[0.1em] uppercase py-3.5 pl-6 pr-3.5 border-none cursor-pointer transition-all duration-400 [transition-timing-function:var(--ease-spring)] hover:bg-[var(--crimson-dp)] active:scale-[0.98] w-full disabled:opacity-70 disabled:cursor-not-allowed cta-btn-magnetic cta-btn-shine"
-                  >
-                    {isSubmitting ? (
-                      <Loader2 className="h-5 w-5 animate-spin" />
-                    ) : (
-                      <>
-                        Enviar mensagem
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(0,0,0,0.22)] text-sm transition-transform duration-400 [transition-timing-function:var(--ease-spring)] hover:translate-x-[1px] hover:-translate-y-[1px] hover:scale-[1.08]">
-                          <ArrowUpRight className="h-4 w-4" />
-                        </span>
-                      </>
+                  {/* Submit buttons */}
+                  <div className="flex flex-col gap-3">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="btn-ripple inline-flex items-center justify-center gap-2.5 rounded-full bg-[var(--crimson)] text-[var(--editorial)] text-[12px] font-bold tracking-[0.1em] uppercase py-3.5 pl-6 pr-3.5 border-none cursor-pointer transition-all duration-400 [transition-timing-function:var(--ease-spring)] hover:bg-[var(--crimson-dp)] active:scale-[0.98] w-full disabled:opacity-70 disabled:cursor-not-allowed cta-btn-magnetic cta-btn-shine"
+                    >
+                      {isSubmitting ? (
+                        <Loader2 className="h-5 w-5 animate-spin" />
+                      ) : (
+                        <>
+                          Enviar mensagem
+                          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(0,0,0,0.22)] text-sm transition-transform duration-400 [transition-timing-function:var(--ease-spring)] hover:translate-x-[1px] hover:-translate-y-[1px] hover:scale-[1.08]">
+                            <ArrowUpRight className="h-4 w-4" />
+                          </span>
+                        </>
+                      )}
+                    </button>
+
+                    {/* WhatsApp alternative button — only shown when name is filled */}
+                    {formData.name.trim().length > 0 && (
+                      <button
+                        type="button"
+                        onClick={handleWhatsAppSubmit}
+                        className="whatsapp-cta-btn inline-flex items-center justify-center gap-2.5 rounded-full bg-transparent border border-[rgba(37,211,102,0.35)] text-[#25D366] text-[12px] font-semibold tracking-[0.08em] uppercase py-3 px-6 cursor-pointer transition-all duration-400 [transition-timing-function:var(--ease-spring)] hover:bg-[rgba(37,211,102,0.08)] hover:border-[rgba(37,211,102,0.55)] active:scale-[0.98] w-full"
+                      >
+                        <MessageCircle className="h-4 w-4" />
+                        Enviar via WhatsApp
+                      </button>
                     )}
-                  </button>
+                  </div>
                 </form>
               ) : (
                 <div
                   role="status"
                   aria-live="polite"
-                  className="max-w-[480px] mx-auto mb-8 p-10 bg-[rgba(255,255,255,0.02)] border border-[rgba(184,196,204,0.1)] rounded-3xl flex flex-col items-center gap-4"
+                  className="cta-success-state max-w-[480px] mx-auto mb-8 p-10 bg-[rgba(255,255,255,0.02)] border border-[rgba(184,196,204,0.1)] rounded-3xl flex flex-col items-center gap-4"
                 >
-                  <div className="w-12 h-12 rounded-full bg-[rgba(139,30,45,0.15)] text-[var(--crimson-lt)] flex items-center justify-center">
-                    <CheckCircle2 className="h-6 w-6" />
+                  <div className="relative w-16 h-16 rounded-full bg-[rgba(34,197,94,0.1)] border border-[rgba(34,197,94,0.25)] flex items-center justify-center cta-success-icon">
+                    <CheckCircle2 className="h-8 w-8 text-[#22C55E]" />
                   </div>
-                  <h3 className="font-serif text-2xl text-[var(--editorial)]">
-                    Mensagem enviada!
-                  </h3>
-                  <p className="text-[var(--prata)] text-sm text-center">
-                    Entraremos em contato em até 24 horas.
-                  </p>
+                  <div className="text-center cta-success-text">
+                    <h3 className="font-serif text-[clamp(22px,4vw,26px)] text-[var(--editorial)] mb-2">
+                      Mensagem enviada!
+                    </h3>
+                    <p className="text-[var(--prata)] text-sm">
+                      Entraremos em contato em até 24 horas.
+                    </p>
+                  </div>
                   <button
                     onClick={() => { setSubmitSuccess(false); setMessageLen(0); }}
                     className="inline-flex items-center gap-2 rounded-full bg-transparent border border-[rgba(184,196,204,0.2)] text-[var(--prata)] text-[12px] font-semibold tracking-[0.08em] uppercase py-3 px-5 cursor-pointer transition-all duration-400 [transition-timing-function:var(--ease-spring)] hover:border-[rgba(184,196,204,0.4)] hover:text-[var(--editorial)]"

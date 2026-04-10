@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
 import { useSmoothScroll } from './smooth-anchor';
@@ -8,6 +8,8 @@ import { useSmoothScroll } from './smooth-anchor';
 export function Hero() {
   const glowRef = useRef<HTMLDivElement>(null);
   const glow2Ref = useRef<HTMLDivElement>(null);
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+  const [scrollHidden, setScrollHidden] = useState(false);
   const scrollTo = useSmoothScroll();
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
@@ -30,6 +32,17 @@ export function Hero() {
     };
   }, [handleMouseMove]);
 
+  /* Hide scroll indicator after first scroll */
+  useEffect(() => {
+    const onScroll = () => {
+      if (!scrollHidden && window.scrollY > 80) {
+        setScrollHidden(true);
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [scrollHidden]);
+
   return (
     <section
       id="hero"
@@ -38,6 +51,12 @@ export function Hero() {
     >
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Dot grid pattern */}
+        <div className="hero-dot-grid" aria-hidden="true" />
+
+        {/* Glow orb behind headline */}
+        <div className="hero-glow-orb" aria-hidden="true" />
+
         {/* Main glow (top-right) */}
         <div
           ref={glowRef}
@@ -59,6 +78,15 @@ export function Hero() {
             backgroundSize: '80px 80px',
           }}
         />
+        {/* Animated star particles */}
+        <div className="hero-star hero-star-1" aria-hidden="true" />
+        <div className="hero-star hero-star-2" aria-hidden="true" />
+        <div className="hero-star hero-star-3" aria-hidden="true" />
+
+        {/* Floating accent lines */}
+        <div className="hero-accent-line hero-accent-line--left" aria-hidden="true" />
+        <div className="hero-accent-line hero-accent-line--right" aria-hidden="true" />
+        <div className="hero-accent-line hero-accent-line--bottom-right" aria-hidden="true" />
       </div>
 
       {/* Bottom gradient line */}
@@ -94,38 +122,44 @@ export function Hero() {
         </ScrollReveal>
 
         <ScrollReveal delay={3}>
-          <div className="grid grid-cols-1 gap-8 max-w-[900px] mb-14 md:grid-cols-2 md:mb-14 md:gap-10">
-            <p className="text-[var(--prata)] text-[15px] leading-[1.8]">
+          <div className="grid grid-cols-1 gap-8 max-w-[900px] mb-14 md:grid-cols-[1fr_auto_1fr] md:mb-14 md:gap-6 md:items-center">
+            <p className="text-[var(--prata)] text-[clamp(14px,1.7vw,15px)] leading-[1.8]">
               A maioria dos escritórios perde clientes para concorrentes tecnicamente inferiores. O que está faltando não é competência — é a forma como ela é percebida.
             </p>
-            <p className="text-[var(--prata)] text-[15px] leading-[1.8]">
+            {/* Desktop vertical divider */}
+            <div className="hidden md:block w-px h-16 bg-gradient-to-b from-transparent via-[rgba(184,196,204,0.12)] to-transparent flex-shrink-0" aria-hidden="true" />
+            <p className="text-[var(--prata)] text-[clamp(14px,1.7vw,15px)] leading-[1.8]">
               Não fazemos logotipos. Arquitetamos identidades que comunicam autoridade antes da primeira conversa. Cada detalhe tem uma razão estrutural.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={4}>
-          <div className="flex flex-col items-stretch gap-4 md:flex-row md:items-center md:gap-4">
+          <div className="flex flex-col items-stretch gap-3 md:flex-row md:items-center md:gap-4">
             <a
               href="#servicos"
               onClick={(e) => {
                 e.preventDefault();
                 scrollTo('#servicos');
               }}
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[var(--crimson)] text-[var(--editorial)] no-underline text-[12px] font-bold tracking-[0.1em] uppercase py-3.5 pl-6 pr-3.5 border-none cursor-pointer transition-all duration-400 [transition-timing-function:var(--ease-spring)] hover:bg-[var(--crimson-dp)] active:scale-[0.98]"
+              className="cta-btn-magnetic cta-btn-shine inline-flex items-center justify-center gap-2.5 rounded-full bg-[var(--crimson)] text-[var(--editorial)] no-underline text-[12px] font-bold tracking-[0.1em] uppercase py-3.5 pl-6 pr-3.5 border-none cursor-pointer transition-all duration-400 [transition-timing-function:var(--ease-spring)] hover:bg-[var(--crimson-dp)] hover:shadow-[0_12px_32px_rgba(139,30,45,0.25),0_4px_12px_rgba(139,30,45,0.15)] active:scale-[0.98]"
             >
               Ver pacotes
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[rgba(0,0,0,0.22)] text-sm transition-transform duration-400 [transition-timing-function:var(--ease-spring)]">
                 <ChevronDown className="h-4 w-4" />
               </span>
             </a>
+
+            {/* Mobile animated divider between buttons */}
+            <div className="hero-cta-divider" aria-hidden="true" />
+
             <a
               href="#metodo"
               onClick={(e) => {
                 e.preventDefault();
                 scrollTo('#metodo');
               }}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-transparent border border-[rgba(184,196,204,0.2)] text-[var(--prata)] no-underline text-[12px] font-semibold tracking-[0.08em] uppercase py-3.5 px-5 cursor-pointer transition-all duration-400 [transition-timing-function:var(--ease-spring)] hover:border-[rgba(184,196,204,0.4)] hover:text-[var(--editorial)]"
+              className="cta-btn-magnetic inline-flex items-center justify-center gap-2 rounded-full bg-transparent border border-[rgba(184,196,204,0.2)] text-[var(--prata)] no-underline text-[12px] font-semibold tracking-[0.08em] uppercase py-3.5 px-5 cursor-pointer transition-all duration-400 [transition-timing-function:var(--ease-spring)] hover:border-[rgba(184,196,204,0.4)] hover:text-[var(--editorial)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)]"
             >
               Como funciona
             </a>
@@ -133,12 +167,12 @@ export function Hero() {
         </ScrollReveal>
 
         <ScrollReveal delay={5}>
-          <div className="flex flex-wrap gap-2 mt-16 pt-10 border-t border-[rgba(184,196,204,0.08)] md:mt-16 md:pt-10">
+          <div className="hero-tags-gradient-border flex flex-wrap gap-2 mt-12 pt-8 border-t border-[rgba(184,196,204,0.08)] md:hidden">
             {['Identidade Visual', 'Presença Digital', 'Autoridade de Marca', 'Branding Jurídico', 'Legal Design', 'OAB Compliant'].map(
               (tag, i) => (
                 <div
                   key={tag}
-                  className={`text-[10px] font-bold tracking-[0.12em] uppercase py-1.5 px-3.5 ${
+                  className={`text-[10px] font-bold tracking-[0.12em] uppercase py-1.5 px-3.5 cursor-default ${
                     i < 3
                       ? 'rounded-full bg-[rgba(139,30,45,0.12)] border border-[rgba(139,30,45,0.3)] text-[var(--editorial)]'
                       : 'rounded-[3px] border border-[rgba(184,196,204,0.15)] text-[var(--editorial)]'
@@ -150,6 +184,16 @@ export function Hero() {
             )}
           </div>
         </ScrollReveal>
+
+        {/* Mobile scroll indicator */}
+        <div
+          ref={scrollIndicatorRef}
+          className={`hero-scroll-indicator ${scrollHidden ? 'is-hidden' : ''}`}
+          aria-hidden="true"
+        >
+          <ChevronDown />
+          <span>Scroll</span>
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { Check, Sparkles } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
 
@@ -25,6 +25,16 @@ const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     results: ['Logotipo e sistema visual base', 'Manual essencial de uso', 'Assinatura e aplicações iniciais'],
     tags: ['Identidade', 'Manual', 'Aplicações'],
     gradient: 'linear-gradient(135deg, rgba(139,30,45,0.25) 0%, rgba(26,26,34,0.95) 60%)',
+  },
+  {
+    client: 'Marca Profissional',
+    specialty: 'Materiais consistentes',
+    plan: 'Nomen',
+    category: 'Profissional',
+    description: 'Para advogados que já possuem base visual e precisam de materiais profissionais alinhados para impressionar em cada ponto de contato.',
+    results: ['Cartão de visitas profissional', 'Papel timbrado diagramado', 'Kit completo para redes sociais'],
+    tags: ['Profissional', 'Cartão', 'Redes Sociais'],
+    gradient: 'linear-gradient(135deg, rgba(155,163,173,0.15) 0%, rgba(26,26,34,0.95) 60%)',
   },
   {
     client: 'Rebranding Completo',
@@ -80,6 +90,7 @@ const PORTFOLIO_PROJECTS: PortfolioProject[] = [
 
 const PLAN_COLORS: Record<string, string> = {
   Signum: 'bg-[rgba(184,196,204,0.1)] text-[var(--prata)] border-[rgba(184,196,204,0.15)]',
+  Nomen: 'bg-[rgba(184,196,204,0.1)] text-[var(--prata-lt)] border-[rgba(184,196,204,0.18)]',
   Autoritas: 'bg-[rgba(139,30,45,0.12)] text-[var(--crimson-lt)] border-[rgba(139,30,45,0.3)]',
   Imperium: 'bg-[rgba(165,37,53,0.15)] text-[var(--crimson)] border-[rgba(165,37,53,0.35)]',
 };
@@ -87,6 +98,8 @@ const PLAN_COLORS: Record<string, string> = {
 const ALL_CATEGORIES = Array.from(new Set(PORTFOLIO_PROJECTS.map((p) => p.category)));
 
 function ProjectCard({ project, index }: { project: PortfolioProject; index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
   // Generate monogram initials
   const initials = project.client
     .replace(/^(Dr\.|Dra\.)\s/, '')
@@ -96,9 +109,29 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
     .join('')
     .toUpperCase();
 
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    if (cardRef.current) {
+      cardRef.current.style.transform = `perspective(800px) rotateY(${x * 2}deg) rotateX(${-y * 2}deg) scale(1.01)`;
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    if (cardRef.current) {
+      cardRef.current.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)';
+    }
+  }, []);
+
   return (
     <ScrollReveal delay={(index % 3) + 1}>
-      <div className="group relative rounded-2xl border border-[rgba(184,196,204,0.08)] overflow-hidden transition-all duration-500 hover:border-[rgba(139,30,45,0.2)] card-glow">
+      <div
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="group relative rounded-2xl border border-[rgba(184,196,204,0.08)] overflow-hidden portfolio-card-glow"
+      >
         {/* Card header with gradient background */}
         <div
           className="relative h-44 md:h-48 p-6 flex flex-col justify-between overflow-hidden transition-all duration-500"
@@ -147,6 +180,9 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
             <div className="absolute bottom-4 right-4 w-16 h-16 border border-[var(--crimson)] rounded-tl-[40px]" />
           </div>
         </div>
+
+        {/* Gradient border glow overlay */}
+        <div className="absolute inset-0 rounded-2xl pointer-events-none z-[3] opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ boxShadow: 'inset 0 0 0 1px rgba(139,30,45,0.15), 0 0 30px rgba(139,30,45,0.06)' }} />
 
         {/* Card body */}
         <div className="p-5 md:p-6 bg-[rgba(13,13,15,0.4)]">
@@ -265,7 +301,7 @@ export function PortfolioShowcase() {
         <ScrollReveal delay={2}>
           <div className="mt-16 flex flex-wrap items-center justify-center gap-8 md:gap-14 text-center">
             {[
-              { value: '6', label: 'Escopos mapeados' },
+              { value: '7', label: 'Escopos mapeados' },
               { value: '4', label: 'Pacotes base' },
               { value: '1 sistema', label: 'Linguagem coerente' },
             ].map((stat) => (

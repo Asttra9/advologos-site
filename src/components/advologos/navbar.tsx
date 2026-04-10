@@ -58,7 +58,7 @@ export function Navbar() {
       id="nav"
       role="navigation"
       aria-label="Navegação principal"
-      className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 py-5 pointer-events-none md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:px-12"
+      className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 py-5 pointer-events-none md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:px-12 navbar-scrolled-border${scrolled ? ' scrolled' : ''}`}
     >
       {/* Logo */}
       <a
@@ -132,20 +132,21 @@ export function Navbar() {
         <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
           <SheetTrigger asChild>
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(184,196,204,0.2)] bg-transparent text-[var(--prata)] hover:border-[rgba(184,196,204,0.4)] hover:text-[var(--editorial)] transition-all duration-300"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(184,196,204,0.2)] bg-transparent text-[var(--prata)] hover:border-[rgba(184,196,204,0.4)] hover:text-[var(--editorial)] transition-all duration-300 mobile-menu-close-btn"
               aria-label="Abrir menu de navegação"
             >
               <Menu className="h-5 w-5" />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="advologos-sheet w-[300px] p-0">
-            <SheetHeader className="p-6 pb-4 border-b border-[rgba(184,196,204,0.08)]">
+          <SheetContent side="right" className="advologos-sheet w-[300px] p-0 relative overflow-hidden">
+            <div className="mobile-menu-overlay" />
+            <SheetHeader className="p-6 pb-4 border-b border-[rgba(184,196,204,0.08)] relative z-[1]">
               <SheetTitle className="font-serif text-2xl text-[var(--editorial)]">
                 <AdvologosLogo className="text-2xl" />
               </SheetTitle>
             </SheetHeader>
-            <div className="flex flex-col gap-1 p-4">
-              {NAV_LINKS.map((link) => (
+            <div className="flex flex-col gap-0.5 p-4 relative z-[1]">
+              {NAV_LINKS.map((link, i) => (
                 <SheetClose asChild key={link.href}>
                   <a
                     href={link.href}
@@ -153,11 +154,12 @@ export function Navbar() {
                       e.preventDefault();
                       handleNavClick(link.href);
                     }}
-                    className={`flex items-center rounded-lg px-4 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase no-underline transition-all duration-300 ${
+                    className={`mobile-menu-item rounded-lg px-4 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase no-underline ${
                       activeSection === link.href
-                        ? 'text-[var(--editorial)] bg-[rgba(139,30,45,0.15)]'
-                        : 'text-[var(--prata)] hover:text-[var(--editorial)] hover:bg-[rgba(255,255,255,0.04)]'
+                        ? 'active text-[var(--editorial)]'
+                        : 'text-[var(--prata)]'
                     }`}
+                    style={{ animationDelay: `${i * 50}ms` }}
                   >
                     {link.label}
                   </a>
@@ -170,7 +172,8 @@ export function Navbar() {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--crimson)] text-[var(--editorial)] no-underline text-[12px] font-bold tracking-[0.1em] uppercase py-3 px-5 transition-all duration-300 hover:bg-[var(--crimson-dp)]"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[var(--crimson)] text-[var(--editorial)] no-underline text-[12px] font-bold tracking-[0.1em] uppercase py-3 px-5 transition-all duration-300 hover:bg-[var(--crimson-dp)] mobile-menu-item"
+                  style={{ animationDelay: `${NAV_LINKS.length * 50}ms` }}
                 >
                   Falar agora
                   <ArrowUpRight className="h-4 w-4" />

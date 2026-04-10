@@ -10,7 +10,6 @@ const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * CIRCLE_RADIUS;
 
 export function BackToTop() {
   const [visible, setVisible] = useState(false);
-  const [hovered, setHovered] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
 
   useEffect(() => {
@@ -32,14 +31,14 @@ export function BackToTop() {
 
   const dashOffset = CIRCLE_CIRCUMFERENCE - (scrollPercent / 100) * CIRCLE_CIRCUMFERENCE;
 
-  if (!visible) return null;
-
   return (
     <button
       onClick={scrollToTop}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="fixed bottom-6 right-6 z-[60] flex items-center justify-center rounded-full bg-[var(--crimson)] text-[var(--editorial)] shadow-lg shadow-[rgba(139,30,45,0.3)] transition-all duration-300 hover:bg-[var(--crimson-dp)] hover:scale-110 hover:shadow-[rgba(139,30,45,0.5)] focus:outline-none focus:ring-2 focus:ring-[var(--crimson-lt)] focus:ring-offset-2 focus:ring-offset-[var(--grafite)]"
+      className={`group fixed bottom-6 right-6 z-[70] flex items-center justify-center rounded-full bg-[var(--crimson)] text-[var(--editorial)] transition-all [transition-timing-function:var(--ease-spring)] ${
+        visible
+          ? 'translate-y-0 opacity-100 scale-100 [transition-duration:600ms] hover:bg-[var(--crimson-dp)] hover:scale-110 hover:shadow-[0_0_22px_rgba(139,30,45,0.5),0_0_44px_rgba(139,30,45,0.2)] focus:outline-none focus:ring-2 focus:ring-[var(--crimson-lt)] focus:ring-offset-2 focus:ring-offset-[var(--grafite)]'
+          : 'translate-y-8 opacity-0 pointer-events-none scale-75 [transition-duration:300ms]'
+      }`}
       aria-label="Voltar ao topo"
       style={{ width: CIRCLE_SIZE + 12, height: CIRCLE_SIZE + 12 }}
     >
@@ -60,7 +59,7 @@ export function BackToTop() {
           stroke="rgba(255,255,255,0.15)"
           strokeWidth={CIRCLE_STROKE}
         />
-        {/* Progress circle */}
+        {/* Progress circle with conditional glow at ≥95% */}
         <circle
           cx={CIRCLE_SIZE / 2}
           cy={CIRCLE_SIZE / 2}
@@ -71,7 +70,7 @@ export function BackToTop() {
           strokeLinecap="round"
           strokeDasharray={CIRCLE_CIRCUMFERENCE}
           strokeDashoffset={dashOffset}
-          className="btt-progress-circle"
+          className={`btt-progress-circle${scrollPercent >= 95 ? ' btt-progress-glow' : ''}`}
           transform={`rotate(-90 ${CIRCLE_SIZE / 2} ${CIRCLE_SIZE / 2})`}
         />
       </svg>
@@ -79,19 +78,17 @@ export function BackToTop() {
       {/* Arrow icon */}
       <ArrowUp className="h-4 w-4 relative z-10" strokeWidth={2.5} />
 
-      {/* Percentage text */}
+      {/* Percentage text — more prominent at 100% */}
       {scrollPercent > 10 && (
-        <span className="btt-percent-text">
+        <span className={`btt-percent-text${scrollPercent >= 100 ? ' btt-percent-complete' : ''}`}>
           {Math.round(scrollPercent)}%
         </span>
       )}
 
-      {/* Tooltip */}
-      {hovered && (
-        <span className="absolute -top-10 right-0 bg-[var(--ardosia)] text-[var(--editorial)] text-[11px] font-medium px-3 py-1.5 rounded-lg border border-[rgba(184,196,204,0.1)] shadow-lg whitespace-nowrap pointer-events-none animate-in fade-in slide-in-from-bottom-1 duration-200">
-          Voltar ao topo
-        </span>
-      )}
+      {/* Pure CSS tooltip — appears on hover */}
+      <span className="absolute -top-10 right-0 bg-[var(--ardosia)] text-[var(--editorial)] text-[11px] font-medium px-3 py-1.5 rounded-lg border border-[rgba(184,196,204,0.1)] shadow-lg whitespace-nowrap pointer-events-none opacity-0 translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
+        Voltar ao topo
+      </span>
     </button>
   );
 }

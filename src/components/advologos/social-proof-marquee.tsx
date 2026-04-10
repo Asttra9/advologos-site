@@ -13,7 +13,7 @@ function LogoSet() {
   return (
     <>
       {MARQUEE_ITEMS.map((name) => (
-        <span key={name} className="flex items-center gap-8 whitespace-nowrap">
+        <span key={name} className="marquee-item flex items-center gap-8 whitespace-nowrap px-4">
           <span className="text-[14px] font-semibold tracking-[0.08em] uppercase text-[var(--nevoa)] opacity-40">
             {name}
           </span>

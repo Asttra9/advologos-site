@@ -79,7 +79,7 @@ export function ProcessTimeline() {
                     <div className="flex flex-col items-center text-center relative">
                       {/* Step number circle */}
                       <div className="relative z-10 mb-5">
-                        <div className="w-16 h-16 rounded-full bg-[var(--crimson)] flex items-center justify-center shadow-[0_0_20px_rgba(139,30,45,0.3)] transition-transform duration-300 hover:scale-110">
+                        <div className={`w-16 h-16 rounded-full bg-[var(--crimson)] flex items-center justify-center shadow-[0_0_20px_rgba(139,30,45,0.3)] transition-transform duration-300 hover:scale-110 ${i === 0 ? 'timeline-step-active' : ''}`}>
                           <StepIcon className="h-6 w-6 text-[var(--editorial)]" />
                         </div>
                         <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[var(--grafite)] border border-[rgba(139,30,45,0.4)] flex items-center justify-center text-[10px] font-bold text-[var(--crimson-lt)]">
@@ -88,10 +88,10 @@ export function ProcessTimeline() {
                       </div>
 
                       {/* Content */}
-                      <h3 className="font-serif text-[16px] text-[var(--editorial)] leading-[1.3] mb-2.5">
+                      <h3 className="font-serif text-[clamp(15px,1.5vw,18px)] text-[var(--editorial)] leading-[1.3] mb-2.5">
                         {step.title}
                       </h3>
-                      <p className="text-[13px] text-[var(--prata)] leading-[1.6] max-w-[220px]">
+                      <p className="text-[clamp(12.5px,1.2vw,13px)] text-[var(--prata)] leading-[1.6] max-w-[220px]">
                         {step.description}
                       </p>
                     </div>
@@ -104,17 +104,17 @@ export function ProcessTimeline() {
           {/* Mobile vertical timeline */}
           <div className="md:hidden relative pl-10">
             {/* Connecting line */}
-            <div className="absolute top-[16px] left-[15px] bottom-[16px] w-px bg-[rgba(139,30,45,0.25)]" />
+            <div className="absolute top-[16px] left-[15px] bottom-[16px] w-px bg-gradient-to-b from-[rgba(139,30,45,0.4)] via-[rgba(139,30,45,0.2)] to-[rgba(139,30,45,0.08)]" />
 
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6">
               {TIMELINE_STEPS.map((step, i) => {
                 const StepIcon = step.Icon;
                 return (
                   <ScrollReveal key={step.number} delay={i + 1}>
-                    <div className="relative flex items-start gap-5">
+                    <div className="relative flex items-start gap-4">
                       {/* Step number circle */}
                       <div className="relative z-10 flex-shrink-0 -ml-[25px]">
-                        <div className="w-8 h-8 rounded-full bg-[var(--crimson)] flex items-center justify-center shadow-[0_0_12px_rgba(139,30,45,0.3)]">
+                        <div className="w-8 h-8 rounded-full bg-[var(--crimson)] flex items-center justify-center shadow-[0_0_12px_rgba(139,30,45,0.3)] transition-shadow duration-300 hover:shadow-[0_0_20px_rgba(139,30,45,0.5)]">
                           <StepIcon className="h-3.5 w-3.5 text-[var(--editorial)]" />
                         </div>
                         <span className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-[var(--grafite)] border border-[rgba(139,30,45,0.4)] flex items-center justify-center text-[8px] font-bold text-[var(--crimson-lt)]">
@@ -123,11 +123,11 @@ export function ProcessTimeline() {
                       </div>
 
                       {/* Content */}
-                      <div>
-                        <h3 className="font-serif text-[15px] text-[var(--editorial)] leading-[1.3] mb-1.5">
+                      <div className="min-w-0">
+                        <h3 className="font-serif text-[clamp(15px,3.5vw,17px)] text-[var(--editorial)] leading-[1.3] mb-1.5">
                           {step.title}
                         </h3>
-                        <p className="text-[13px] text-[var(--prata)] leading-[1.6]">
+                        <p className="text-[clamp(12.5px,2.8vw,13px)] text-[var(--prata)] leading-[1.6]">
                           {step.description}
                         </p>
                       </div>

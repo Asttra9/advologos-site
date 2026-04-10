@@ -72,7 +72,7 @@ export function BeforeAfterSection() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-5">
           {BEFORE_AFTER_CASES.map((item, i) => (
             <ScrollReveal key={item.client} delay={i + 3}>
-              <div className="h-full bg-[rgba(255,255,255,0.025)] border border-[rgba(184,196,204,0.08)] rounded-2xl p-5 md:p-6 hover:border-[rgba(184,196,204,0.18)] transition-all duration-500 shimmer-on-hover flex flex-col">
+              <div className="h-full bg-[rgba(255,255,255,0.025)] border border-[rgba(184,196,204,0.08)] rounded-2xl p-5 md:p-6 hover:border-[rgba(184,196,204,0.18)] transition-all duration-500 shimmer-on-hover flex flex-col before-after-card-glow">
                 {/* Client header */}
                 <div className="mb-4">
                   <h3 className="font-serif text-[17px] font-normal text-[var(--editorial)] leading-[1.3] mb-1">
@@ -82,13 +82,14 @@ export function BeforeAfterSection() {
                     <span className="text-[11px] text-[var(--nevoa)]">
                       {item.specialty}
                     </span>
-                    <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-[var(--crimson-lt)] bg-[rgba(139,30,45,0.12)] border border-[rgba(139,30,45,0.25)] rounded-full px-2.5 py-0.5">
+                    <span className="before-after-badge">
                       {item.plan}
                     </span>
                   </div>
                 </div>
 
                 {/* Before / After panels */}
+                <div className="before-after-divider w-full mb-3" />
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-3">
                   {/* ANTES */}
                   <div className="bg-[rgba(255,255,255,0.02)] border border-[rgba(184,196,204,0.06)] rounded-lg p-4 h-full">
@@ -128,8 +129,8 @@ export function BeforeAfterSection() {
                 </div>
 
                 {/* Result metric divider */}
-                <div className="mt-auto pt-5 border-t border-[rgba(184,196,204,0.08)] text-center">
-                  <span className="font-serif text-[28px] text-[var(--crimson-lt)] leading-[1.1] block">
+                <div className="mt-auto pt-5 text-center">
+                  <span className="before-after-metric-number font-serif text-[28px] leading-[1.1] block">
                     {item.metric.value}
                   </span>
                   <span className="text-[10px] font-medium tracking-[0.08em] uppercase text-[var(--nevoa)] mt-1 block">

@@ -1,7 +1,9 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { Target, Palette, Wrench } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
+import { AnimatedNumber } from './animated-number';
 
 const PILLARS = [
   {
@@ -33,9 +35,7 @@ export function AboutSection() {
     >
       <div className="max-w-[1160px] mx-auto px-5 md:px-12">
         <ScrollReveal>
-          <div className="section-divider mb-14">
-            <div className="section-divider-diamond" />
-          </div>
+          <div className="section-wave-separator mb-14" />
         </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-12 items-start md:grid-cols-2 md:gap-20">
@@ -44,16 +44,18 @@ export function AboutSection() {
             <ScrollReveal>
               <div className="inline-flex items-center gap-2.5 text-[10px] font-bold tracking-[0.18em] uppercase text-[var(--crimson-lt)] mb-5">
                 <span className="block w-5 h-px bg-[var(--crimson-lt)] flex-shrink-0" />
-                04 — Quem Somos
+                05 — Por que a Advologos
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={1}>
-              <h2 className="section-heading-accent font-serif text-[clamp(32px,4.5vw,56px)] font-normal text-[var(--editorial)] leading-[1.08] tracking-[-0.015em] mb-5">
-                Não somos uma agência genérica.
-                <br />
-                Somos especialistas em marcas jurídicas.
-              </h2>
+              <div className="about-heading-glow relative inline-block">
+                <h2 className="section-heading-accent font-serif text-[clamp(32px,4.5vw,56px)] font-normal text-[var(--editorial)] leading-[1.08] tracking-[-0.015em] mb-5 relative z-10">
+                  Não somos uma agência genérica.
+                  <br />
+                  Somos especialistas em marcas jurídicas.
+                </h2>
+              </div>
             </ScrollReveal>
 
             <ScrollReveal delay={2}>
@@ -81,7 +83,7 @@ export function AboutSection() {
               const Icon = pillar.icon;
               return (
                 <ScrollReveal key={pillar.title} delay={i + 1}>
-                  <div className="bg-[rgba(255,255,255,0.025)] border border-[rgba(184,196,204,0.08)] p-1 rounded-[1.25rem] card-glow card-lift shimmer-on-hover">
+                  <div className="about-pillar-card bg-[rgba(255,255,255,0.025)] border border-[rgba(184,196,204,0.08)] p-1 rounded-[1.25rem] card-glow card-lift shimmer-on-hover">
                     <div className="bg-[var(--ardosia)] rounded-[calc(1.25rem-5px)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] px-6 py-5 flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-[rgba(139,30,45,0.1)] border border-[rgba(139,30,45,0.22)] flex-shrink-0 flex items-center justify-center text-[var(--crimson-lt)]">
                         <Icon className="h-[18px] w-[18px]" />
@@ -101,6 +103,36 @@ export function AboutSection() {
             })}
           </div>
         </div>
+
+        {/* Animated stats */}
+        <ScrollReveal delay={4}>
+          <div className="mt-16 grid grid-cols-3 gap-4 max-w-[540px]">
+            <div className="text-center">
+              <div className="font-serif text-[clamp(28px,4vw,36px)] text-[var(--crimson-lt)] leading-none mb-1">
+                <AnimatedNumber value={3} duration={1200} />
+              </div>
+              <div className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[var(--nevoa)]">
+                Pilares
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="font-serif text-[clamp(28px,4vw,36px)] text-[var(--crimson-lt)] leading-none mb-1">
+                <AnimatedNumber value={5} duration={1400} />
+              </div>
+              <div className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[var(--nevoa)]">
+                Etapas
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="font-serif text-[clamp(28px,4vw,36px)] text-[var(--crimson-lt)] leading-none mb-1">
+                <AnimatedNumber value={4} duration={1600} />
+              </div>
+              <div className="text-[10px] font-semibold tracking-[0.12em] uppercase text-[var(--nevoa)]">
+                Pacotes
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

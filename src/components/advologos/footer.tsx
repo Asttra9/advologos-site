@@ -10,6 +10,8 @@ const ICON_MAP: Record<string, typeof Instagram> = {
 };
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer
       className="mt-auto border-t border-[rgba(184,196,204,0.1)] footer-gradient-border"
@@ -28,12 +30,12 @@ export function Footer() {
             <div className="text-[10px] font-bold tracking-[0.16em] uppercase text-[var(--crimson-lt)] mb-1">
               Navegação
             </div>
-            <ul className="flex flex-col gap-2 list-none">
+            <ul className="flex flex-col gap-2.5 list-none">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-[var(--nevoa)] no-underline text-[13px] font-medium tracking-[0.03em] transition-colors duration-300 hover:text-[var(--editorial)] hover:translate-x-1 inline-block"
+                    className="footer-nav-link text-[var(--nevoa)] text-[13px] font-medium tracking-[0.03em] transition-colors duration-300 hover:text-[var(--editorial)] hover:translate-x-1 inline-block"
                   >
                     {link.label}
                   </a>
@@ -42,7 +44,7 @@ export function Footer() {
               <li>
                 <a
                   href="#faq"
-                  className="text-[var(--nevoa)] no-underline text-[13px] font-medium tracking-[0.03em] transition-colors duration-300 hover:text-[var(--editorial)] inline-block"
+                  className="footer-nav-link text-[var(--nevoa)] text-[13px] font-medium tracking-[0.03em] transition-colors duration-300 hover:text-[var(--editorial)] inline-block"
                 >
                   Perguntas frequentes
                 </a>
@@ -66,7 +68,7 @@ export function Footer() {
                     target={isMail ? undefined : '_blank'}
                     rel={isMail ? undefined : 'noopener noreferrer'}
                     aria-label={channel.label}
-                    className="flex items-center gap-2 rounded-full border border-[rgba(184,196,204,0.12)] px-3 py-2 text-[12px] text-[var(--nevoa)] no-underline transition-all duration-300 hover:border-[var(--crimson)] hover:text-[var(--crimson-lt)] hover:bg-[rgba(139,30,45,0.08)]"
+                    className="footer-social-btn flex items-center gap-2 rounded-full border border-[rgba(184,196,204,0.12)] px-3 py-2 text-[12px] text-[var(--nevoa)] no-underline hover:border-[var(--crimson)] hover:text-[var(--crimson-lt)] hover:bg-[rgba(139,30,45,0.08)]"
                   >
                     <span className="flex h-5 w-5 items-center justify-center">
                       {IconComponent && <IconComponent className="h-4 w-4" />}
@@ -84,9 +86,11 @@ export function Footer() {
           <NewsletterSignup />
         </div>
 
-        <div className="pt-6 border-t border-[rgba(184,196,204,0.06)] flex flex-col md:flex-row justify-between items-center gap-3">
-          <small className="text-[10px] text-[var(--nevoa)] opacity-50 font-mono tracking-wide">
-            © 2022 — 2026 {SITE_CONFIG.name}. Uso e aplicação sujeitos às diretrizes de marca.
+        <div className="pt-6 border-t border-[rgba(184,196,204,0.06)] flex flex-col sm:flex-row justify-between items-center gap-3">
+          <small className="text-[10px] text-[var(--nevoa)] opacity-50 font-mono tracking-wide flex items-center gap-3 flex-wrap justify-center">
+            <span>© 2022 — {currentYear} {SITE_CONFIG.name}.</span>
+            <span className="footer-copyright-separator" aria-hidden="true" />
+            <span>Uso e aplicação sujeitos às diretrizes de marca.</span>
           </small>
           <p className="text-[10px] text-[var(--nevoa)] opacity-40 tracking-wide">
             Marcas jurídicas com presença, clareza e autoridade.

@@ -76,7 +76,7 @@ export function AnimatedNumber({
   return (
     <span ref={elementRef} className={className}>
       {prefix}
-      {hasStarted && prefersReducedMotion ? value : displayValue}
+      {prefersReducedMotion ? value : displayValue}
       {suffix}
     </span>
   );

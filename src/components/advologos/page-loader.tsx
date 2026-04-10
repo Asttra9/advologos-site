@@ -42,10 +42,10 @@ export function PageLoader() {
 
       {/* Logo text with pulse animation */}
       <div className="relative flex flex-col items-center gap-4">
-        <h1 className="font-serif text-[clamp(28px,5vw,48px)] tracking-[-0.02em] animate-[page-loader-pulse_1.8s_ease-in-out_infinite]">
+        <p className="font-serif text-[clamp(28px,5vw,48px)] tracking-[-0.02em] animate-[page-loader-pulse_1.8s_ease-in-out_infinite]" role="status" aria-live="polite">
           <span className="text-[var(--editorial)]">Advo</span>
           <span className="text-[var(--crimson)]">logos</span>
-        </h1>
+        </p>
         <div className="flex items-center gap-2">
           <span className="h-[1px] w-6 bg-[var(--ardosia-md)]" />
           <span className="text-[9px] font-semibold tracking-[0.25em] uppercase text-[var(--nevoa)]">

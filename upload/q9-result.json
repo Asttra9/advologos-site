@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "1. **Section: Homepage (Branding & Presença Digital Jurídica)**  \n   - Visual: Cookie banner overlaps content; \"1 Issue\" badge clips text.  \n\n2. **Section: Pricing/Comparativo**  \n   - Layout: Table rows (e.g., \"Presença Digital\") are clipped; \"1 Issue\" badge partially covers content.  \n\n3. **Section: About/Quem Somos**  \n   - Visual: Text at bottom is clipped; \"1 Issue\" badge overlaps content.  \n\n4. **Section: Video/Method (Método)**  \n   - Visual: Video placeholder is empty; \"1 Issue\" badge overlaps cookie banner.  \n\n5. **Section: Results/Resultados**  \n   - Layout: \"Antes/Depois\" comparison cards are clipped; \"1 Issue\" badge overlaps content.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1775370508,
+  "id": "20260405142818bdf3055f8b4349d3",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260405142818bdf3055f8b4349d3",
+  "usage": {
+    "completion_tokens": 178,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 6737,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 6915
+  }
+}

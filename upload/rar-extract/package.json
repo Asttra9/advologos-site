@@ -1,0 +1,16 @@
+{
+  "name": "rar-extract",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "node-unrar-js": "^2.0.2",
+    "unrar": "^0.2.0"
+  }
+}
