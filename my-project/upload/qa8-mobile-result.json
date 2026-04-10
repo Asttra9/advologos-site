@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "The screenshot shows a mobile website for \"Advologos,\" a legal branding and digital presence service. The dark-themed page features a header with the brand name, a \"CONTATO\" (Contact) button, and a menu icon. A prominent section highlights \"BRANDING & PRESENÇA DIGITAL JURÍDICA\" (Legal Branding & Digital Presence) with the headline \"Marcas jurídicas com presença, clareza e autoridade\" (Legal brands with presence, clarity, and authority). Below, text explains how Advologos structures a law firm’s perception. A privacy notice at the bottom includes cookie consent buttons (\"ACEITAR TODOS\" and \"SOMENTE NECESSÁRIOS\") and a notification badge showing \"1 Issue.\"",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1775370446,
+  "id": "20260405142720f4f8f482bdd94ecc",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260405142720f4f8f482bdd94ecc",
+  "usage": {
+    "completion_tokens": 158,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 442,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 600
+  }
+}
