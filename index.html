@@ -1,0 +1,2707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advologos — Marcas jurídicas com presença, clareza e autoridade.</title>
+  <meta name="description" content="A Advologos estrutura a forma como o mercado percebe quem advoga. Branding jurídico especializado com identidade visual, presença digital e autoridade de marca.">
+  <meta name="keywords" content="branding jurídico, identidade visual advogado, logo escritório de advocacia, presença digital jurídica, OAB, Provimento 205/2021">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://advologos.netlify.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Advologos — Marcas jurídicas com presença, clareza e autoridade.">
+  <meta property="og:description" content="Branding jurídico especializado. Identidade visual, presença digital e autoridade de marca para advogados e escritórios.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://advologos.netlify.app/">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Advologos — Marcas jurídicas com presença, clareza e autoridade.">
+  <meta name="twitter:description" content="Branding jurídico especializado para advogados e escritórios.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { line-height: 1.5; }
+    img, svg, video { display: block; max-width: 100%; }
+    button { cursor: pointer; background: none; border: none; font: inherit; }
+    a { text-decoration: none; color: inherit; }
+    ul, ol { list-style: none; }
+
+    /* ── DESIGN TOKENS ──────────────────────────────────────────── */
+    :root {
+      --grafite:     #0D0D0F;
+      --ardosia:     #1A1A22;
+      --ardosia-md:  #2A2A35;
+      --crimson:     #8B1E2D;
+      --crimson-dp:  #6B1520;
+      --crimson-lt:  #A52535;
+      --prata:       #B8C4CC;
+      --prata-lt:    #D4DDE3;
+      --editorial:   #F2F0EB;
+      --nevoa:       #6B7280;
+      --nevoa-lt:    #9CA3AF;
+      --border:      rgba(184,196,204,.10);
+      --border-md:   rgba(184,196,204,.22);
+      --ease-spring: cubic-bezier(.32,.72,0,1);
+      --ease-expo:   cubic-bezier(.16,1,.3,1);
+      --font-serif:  'DM Serif Display', Georgia, serif;
+      --font-sans:   'Plus Jakarta Sans', system-ui, sans-serif;
+      --font-mono:   'Fira Code', monospace;
+    }
+
+    /* ── BASE ───────────────────────────────────────────────────── */
+    body {
+      background: var(--grafite);
+      color: var(--editorial);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: .028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 256px;
+    }
+    ::selection { color: var(--editorial); background: rgba(139,30,45,.32); }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--grafite); }
+    ::-webkit-scrollbar-thumb { background: var(--ardosia-md); border-radius: 2px; }
+    h1,h2,h3,h4 { text-wrap: balance; }
+
+    /* ── SKIP LINK ──────────────────────────────────────────────── */
+    .skip-link {
+      position: absolute; top: -100%; left: 0;
+      background: var(--crimson); color: var(--editorial);
+      padding: 8px 16px; font-size: 14px;
+      z-index: 1000;
+      transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ── UTILITY ────────────────────────────────────────────────── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 48px; }
+    .section { padding: 128px 0; border-bottom: 1px solid var(--border); }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px;
+      font-size: 10px; font-weight: 600; letter-spacing: .20em; text-transform: uppercase;
+      color: var(--crimson-lt);
+      background: rgba(139,30,45,.12);
+      border: 1px solid rgba(139,30,45,.30);
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+
+    .label-caps {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--crimson); margin-bottom: 20px;
+    }
+    .label-caps::before {
+      content: ''; display: block;
+      width: 20px; height: 1px;
+      background: var(--crimson); flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400; color: var(--editorial);
+      line-height: 1.1; margin-bottom: 20px;
+    }
+    .section-title em { color: var(--crimson); font-style: italic; }
+
+    .section-body {
+      color: var(--prata); font-size: 15px;
+      line-height: 1.8; max-width: 65ch;
+    }
+
+    /* Reveal animation */
+    [data-reveal] {
+      opacity: 0; filter: blur(4px); transform: translateY(20px);
+      transition:
+        opacity .75s var(--ease-expo),
+        transform .75s var(--ease-expo),
+        filter .75s var(--ease-expo);
+    }
+    [data-reveal].visible { opacity: 1; filter: blur(0); transform: translateY(0); }
+    [data-reveal][data-delay="1"] { transition-delay: 80ms; }
+    [data-reveal][data-delay="2"] { transition-delay: 160ms; }
+    [data-reveal][data-delay="3"] { transition-delay: 240ms; }
+    [data-reveal][data-delay="4"] { transition-delay: 320ms; }
+
+    /* ── NAV ────────────────────────────────────────────────────── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 48px;
+      pointer-events: none;
+      transition: all .3s var(--ease-spring);
+    }
+    #nav-logo {
+      font-family: var(--font-serif); font-size: 17px;
+      color: var(--editorial); pointer-events: all;
+      cursor: pointer; padding: 0;
+      transition: opacity .3s var(--ease-spring);
+    }
+    #nav-logo:hover { opacity: .7; }
+    #nav-logo .accent { color: var(--crimson); }
+
+    #nav-links {
+      background: rgba(13,13,15,.60);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(184,196,204,.12);
+      border-radius: 9999px;
+      padding: 10px 20px;
+      display: flex; align-items: center; gap: 4px;
+      pointer-events: all;
+      transition: background .5s var(--ease-spring), box-shadow .5s var(--ease-spring);
+    }
+    #nav.scrolled #nav-links {
+      background: rgba(13,13,15,.88);
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    }
+
+    .nav-btn {
+      background: none;
+      border: 1px solid transparent;
+      border-radius: 9999px;
+      padding: 5px 14px;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .10em; text-transform: uppercase;
+      color: var(--nevoa);
+      transition: all .4s var(--ease-spring);
+      white-space: nowrap;
+    }
+    .nav-btn:hover { color: var(--prata); }
+    .nav-btn.active {
+      background: rgba(139,30,45,.20);
+      border-color: rgba(139,30,45,.40);
+      color: var(--editorial);
+    }
+
+    #nav-cta {
+      pointer-events: all;
+      background: var(--crimson);
+      color: var(--editorial);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      border: none; cursor: pointer;
+      transition: background .3s var(--ease-spring), transform .3s var(--ease-spring);
+    }
+    #nav-cta:hover { background: var(--crimson-lt); transform: scale(1.03); }
+
+    /* Mobile nav */
+    #nav-hamburger {
+      display: none;
+      pointer-events: all;
+      flex-direction: column; gap: 5px;
+      padding: 8px; cursor: pointer;
+    }
+    #nav-hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--prata); border-radius: 1px;
+      transition: all .3s var(--ease-spring);
+    }
+    #nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+    #nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    #nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+    #mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(13,13,15,.97);
+      backdrop-filter: blur(20px);
+      z-index: 40;
+      flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      padding: 80px 24px 40px;
+    }
+    #mobile-menu.open { display: flex; }
+    .mobile-nav-btn {
+      font-family: var(--font-serif);
+      font-size: 28px; color: var(--editorial);
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: color .3s;
+      text-align: center;
+    }
+    .mobile-nav-btn:hover { color: var(--crimson-lt); }
+    .mobile-cta-btn {
+      margin-top: 24px;
+      background: var(--crimson);
+      color: var(--editorial);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 14px 32px; border-radius: 9999px;
+      display: inline-block;
+    }
+
+    /* ── HERO ───────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100dvh;
+      display: flex; align-items: center;
+      padding: 160px 0 100px;
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    #hero-glow {
+      position: absolute; top: -12%; right: -6%;
+      width: 750px; height: 750px;
+      pointer-events: none;
+      transition: transform 1s var(--ease-spring);
+    }
+    #hero-line {
+      position: absolute; top: 0; right: 26%; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(184,196,204,.05), transparent);
+      pointer-events: none;
+    }
+    #hero .eyebrow { margin-bottom: 32px; }
+
+    #hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(52px, 8vw, 100px);
+      font-weight: 400; line-height: .92;
+      color: var(--editorial);
+      margin-bottom: 12px;
+      letter-spacing: -.025em; text-wrap: balance;
+    }
+    #hero h1 em { color: var(--crimson); font-style: italic; }
+
+    #hero-sub {
+      font-family: var(--font-serif);
+      font-size: clamp(17px, 2.2vw, 26px);
+      font-style: italic; color: var(--nevoa);
+      margin-bottom: 56px; line-height: 1.35;
+    }
+
+    #hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; max-width: 840px; margin-bottom: 48px;
+    }
+    #hero-grid p { color: var(--prata); font-size: 15px; line-height: 1.8; }
+
+    #hero-btns {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--crimson);
+      color: var(--editorial);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 14px 24px; border-radius: 9999px;
+      transition: background .3s var(--ease-spring), transform .3s var(--ease-spring);
+    }
+    .btn-primary:hover { background: var(--crimson-lt); transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--prata);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: .10em; text-transform: uppercase;
+      padding: 13px 24px; border-radius: 9999px;
+      border: 1px solid var(--border-md);
+      transition: all .3s var(--ease-spring);
+    }
+    .btn-secondary:hover { color: var(--editorial); border-color: var(--prata-lt); }
+
+    #hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .hero-tag {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 7px 14px; border-radius: 3px;
+      border: 1px solid var(--border-md);
+      color: var(--nevoa); background: transparent;
+      min-height: 36px; display: flex; align-items: center;
+    }
+    .hero-tag.primary {
+      border-color: var(--crimson);
+      color: var(--editorial);
+      background: rgba(139,30,45,.10);
+    }
+
+    /* ── STATS BAR ──────────────────────────────────────────────── */
+    #stats-bar {
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0;
+    }
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      padding: 24px 32px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4vw, 54px);
+      color: var(--editorial); line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-number .stat-val { display: inline; }
+    .stat-label {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--nevoa);
+    }
+
+    /* ── PROBLEMA (01) ──────────────────────────────────────────── */
+    #problema .problema-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+      margin-bottom: 80px;
+    }
+    .problema-highlight {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 3vw, 36px);
+      color: var(--editorial); line-height: 1.25;
+      margin-bottom: 24px;
+    }
+    .problema-body {
+      color: var(--prata); font-size: 15px; line-height: 1.8;
+      margin-bottom: 0;
+    }
+    .problema-body strong { color: var(--editorial); font-weight: 600; }
+
+    .problema-stats {
+      display: grid; grid-template-rows: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+    }
+    .problema-stat {
+      background: var(--grafite);
+      padding: 28px 32px;
+      display: flex; gap: 24px; align-items: flex-start;
+    }
+    .problema-stat-num {
+      font-family: var(--font-serif);
+      font-size: 42px; color: var(--crimson-lt);
+      line-height: 1; flex-shrink: 0; min-width: 70px;
+    }
+    .problema-stat-text strong {
+      display: block;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: .06em; color: var(--editorial);
+      margin-bottom: 4px;
+    }
+    .problema-stat-text p {
+      font-size: 13px; color: var(--nevoa); line-height: 1.6;
+    }
+
+    /* ── SERVIÇOS (02) ──────────────────────────────────────────── */
+    #servicos { border-bottom: none; }
+    .services-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; gap: 24px;
+      margin-bottom: 48px; flex-wrap: wrap;
+    }
+
+    /* Toggle switch */
+    .billing-toggle {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 12px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--nevoa);
+    }
+    .toggle-switch {
+      width: 44px; height: 24px;
+      background: var(--ardosia-md);
+      border-radius: 9999px;
+      border: 1px solid var(--border-md);
+      position: relative; cursor: pointer;
+      transition: background .3s var(--ease-spring);
+    }
+    .toggle-switch::after {
+      content: ''; position: absolute;
+      top: 3px; left: 3px;
+      width: 16px; height: 16px;
+      background: var(--prata); border-radius: 50%;
+      transition: transform .3s var(--ease-spring);
+    }
+    .toggle-switch.on { background: var(--crimson); }
+    .toggle-switch.on::after { transform: translateX(20px); }
+    .billing-toggle .toggle-label { transition: color .3s; }
+    .billing-toggle .toggle-label.active { color: var(--editorial); }
+
+    /* Service cards */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px; margin-bottom: 80px;
+    }
+    .service-card {
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px;
+      transition: transform .5s var(--ease-spring);
+    }
+    .service-card:hover { transform: translateY(-4px); }
+    .service-card.featured { border-color: rgba(139,30,45,.40); }
+    .service-card-inner {
+      background: var(--ardosia);
+      border-radius: 15px; padding: 28px 24px;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.06);
+      height: 100%; display: flex; flex-direction: column;
+    }
+    .service-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 9999px;
+      margin-bottom: 20px;
+    }
+    .service-badge.default {
+      color: var(--nevoa); background: rgba(184,196,204,.08);
+      border: 1px solid var(--border);
+    }
+    .service-badge.popular {
+      color: #E0A060; background: rgba(224,160,96,.10);
+      border: 1px solid rgba(224,160,96,.30);
+    }
+    .service-badge.premium {
+      color: var(--prata-lt); background: rgba(184,196,204,.10);
+      border: 1px solid var(--border-md);
+    }
+    .service-name {
+      font-family: var(--font-serif);
+      font-size: 22px; color: var(--editorial);
+      margin-bottom: 4px;
+    }
+    .service-tagline {
+      font-size: 12px; font-style: italic;
+      color: var(--nevoa); margin-bottom: 20px;
+    }
+    .service-desc {
+      font-size: 13px; color: var(--prata);
+      line-height: 1.7; margin-bottom: 24px;
+    }
+    .service-features {
+      display: flex; flex-direction: column; gap: 8px;
+      margin-bottom: 24px; flex: 1;
+    }
+    .service-feature {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 12px; color: var(--prata); line-height: 1.5;
+    }
+    .service-feature::before {
+      content: ''; display: block;
+      width: 14px; height: 14px; flex-shrink: 0;
+      margin-top: 1px;
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='7' cy='7' r='6.5' stroke='%238B1E2D' stroke-opacity='0.5'/%3E%3Cpath d='M4 7l2 2 4-4' stroke='%23A52535' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: contain; background-repeat: no-repeat;
+    }
+    .service-price {
+      font-family: var(--font-serif);
+      font-size: 20px; color: var(--editorial);
+      margin-bottom: 16px;
+    }
+    .service-price .price-sub {
+      font-size: 12px; color: var(--nevoa);
+      font-family: var(--font-sans);
+    }
+    /* Monthly price (hidden by default) */
+    .service-price-monthly { display: none; }
+    .billing-monthly .service-price-monthly { display: block; }
+    .billing-monthly .service-price-yearly { display: none; }
+
+    .service-cta {
+      display: block; text-align: center;
+      padding: 11px 16px; border-radius: 9999px;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .10em; text-transform: uppercase;
+      border: 1px solid var(--border-md); color: var(--prata);
+      transition: all .3s var(--ease-spring);
+    }
+    .service-cta:hover { border-color: var(--prata-lt); color: var(--editorial); }
+    .service-cta.featured-cta {
+      background: var(--crimson); border-color: var(--crimson);
+      color: var(--editorial);
+    }
+    .service-cta.featured-cta:hover { background: var(--crimson-lt); }
+
+    /* Comparison table */
+    .comparison-header {
+      margin-bottom: 32px;
+    }
+    .comparison-toggle { margin-bottom: 24px; }
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      overflow-x: auto;
+    }
+    .comparison-table {
+      width: 100%; border-collapse: collapse;
+      min-width: 680px;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(184,196,204,.06);
+      text-align: center; font-size: 13px;
+    }
+    .comparison-table th:first-child,
+    .comparison-table td:first-child { text-align: left; }
+    .comparison-table thead th {
+      background: var(--ardosia);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--nevoa); padding: 16px;
+      border-bottom: 1px solid rgba(184,196,204,.10);
+    }
+    .comparison-table thead th.col-featured {
+      background: rgba(139,30,45,.12);
+      color: var(--crimson-lt);
+    }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table tbody tr:hover td { background: rgba(255,255,255,.015); }
+    .comparison-table td { color: var(--prata); }
+    .comparison-table td:first-child {
+      font-size: 13px; color: var(--prata); font-weight: 400;
+    }
+    .comparison-table td.col-featured { background: rgba(139,30,45,.04); }
+    .check { color: var(--crimson-lt); font-size: 16px; }
+    .dash { color: var(--nevoa); opacity: .5; }
+    .table-price-row td {
+      font-family: var(--font-serif);
+      font-size: 18px; color: var(--editorial);
+      border-top: 1px solid rgba(184,196,204,.10) !important;
+      padding-top: 20px; padding-bottom: 20px;
+    }
+    .table-total-row td {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--nevoa); padding-bottom: 20px;
+    }
+    .table-note { font-size: 12px; color: var(--nevoa); margin-top: 16px; text-align: center; }
+
+    /* ── MÉTODO (03) ────────────────────────────────────────────── */
+    #metodo .metodo-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .metodo-steps { display: flex; flex-direction: column; gap: 0; }
+    .metodo-step {
+      display: flex; gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: all .4s var(--ease-spring);
+    }
+    .metodo-step:first-child { padding-top: 0; }
+    .metodo-step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 11px; font-weight: 500;
+      color: var(--crimson); flex-shrink: 0;
+      padding-top: 3px; min-width: 24px;
+    }
+    .step-content {}
+    .step-title {
+      font-size: 15px; font-weight: 600;
+      color: var(--editorial); margin-bottom: 8px;
+    }
+    .step-desc {
+      font-size: 13px; color: var(--nevoa);
+      line-height: 1.7;
+    }
+
+    .metodo-side {
+      position: sticky; top: 120px;
+    }
+    .metodo-quote {
+      background: rgba(139,30,45,.06);
+      border-left: 2px solid var(--crimson);
+      padding: 28px 28px 28px 32px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 32px;
+    }
+    .metodo-quote blockquote {
+      font-family: var(--font-serif);
+      font-size: 18px; color: var(--editorial);
+      line-height: 1.5; font-style: italic;
+      margin-bottom: 12px;
+    }
+    .metodo-quote cite {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--nevoa); font-style: normal;
+    }
+    .metodo-diff-list { display: flex; flex-direction: column; gap: 10px; }
+    .metodo-diff-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 13px; color: var(--prata); line-height: 1.6;
+    }
+    .metodo-diff-item::before {
+      content: '—'; color: var(--crimson);
+      flex-shrink: 0; font-family: var(--font-mono);
+    }
+
+    /* ── AUTORIDADE (04) ────────────────────────────────────────── */
+    #autoridade .autoridade-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+      margin-bottom: 64px;
+    }
+    .autoridade-body {
+      font-size: 15px; color: var(--prata);
+      line-height: 1.8; margin-bottom: 32px;
+    }
+    .autoridade-pillars {
+      display: flex; flex-direction: column; gap: 24px;
+    }
+    .pillar {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+    }
+    .pillar:first-child { border-top: none; padding-top: 0; }
+    .pillar-title {
+      font-size: 14px; font-weight: 700;
+      color: var(--editorial); margin-bottom: 8px;
+    }
+    .pillar-desc {
+      font-size: 13px; color: var(--prata); line-height: 1.7;
+    }
+
+    .autoridade-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-bottom: 48px;
+    }
+    .autoridade-card {
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 5px;
+    }
+    .autoridade-card-inner {
+      background: var(--ardosia); border-radius: 11px;
+      padding: 28px 24px;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.06);
+    }
+    .ac-label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--crimson); margin-bottom: 12px;
+    }
+    .ac-title {
+      font-family: var(--font-serif);
+      font-size: 20px; color: var(--editorial);
+      margin-bottom: 12px;
+    }
+    .ac-desc {
+      font-size: 13px; color: var(--prata); line-height: 1.7;
+    }
+
+    .oab-badge {
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 5px;
+    }
+    .oab-badge-inner {
+      background: var(--ardosia); border-radius: 11px;
+      padding: 28px 32px;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.06);
+      display: flex; gap: 24px; align-items: flex-start;
+    }
+    .oab-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(139,30,45,.15);
+      border: 1px solid rgba(139,30,45,.30);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .oab-title {
+      font-size: 14px; font-weight: 700;
+      color: var(--editorial); margin-bottom: 8px;
+    }
+    .oab-desc {
+      font-size: 13px; color: var(--prata); line-height: 1.7;
+    }
+    .oab-desc strong { color: var(--crimson-lt); font-weight: 600; }
+
+    /* ── POR QUÊ (05) ───────────────────────────────────────────── */
+    #porque .porque-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; margin-bottom: 64px; align-items: start;
+    }
+    .porque-features { display: flex; flex-direction: column; gap: 32px; }
+    .porque-feature {}
+    .pf-title {
+      font-size: 15px; font-weight: 700;
+      color: var(--editorial); margin-bottom: 8px;
+    }
+    .pf-desc {
+      font-size: 13px; color: var(--prata); line-height: 1.7;
+    }
+    .porque-quote {
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 5px; margin-bottom: 32px;
+    }
+    .porque-quote-inner {
+      background: var(--ardosia); border-radius: 11px;
+      padding: 28px 28px;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.06);
+    }
+    .porque-quote-inner blockquote {
+      font-family: var(--font-serif);
+      font-size: 17px; font-style: italic;
+      color: var(--prata); line-height: 1.6;
+    }
+
+    /* ── FAQ (06) ───────────────────────────────────────────────── */
+    #faq .faq-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 16px;
+    }
+    .faq-count {
+      font-size: 12px; color: var(--nevoa);
+      font-weight: 500; letter-spacing: .05em;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%; display: flex; justify-content: space-between;
+      align-items: center; gap: 16px;
+      padding: 24px 0; cursor: pointer;
+      font-size: 15px; font-weight: 600;
+      color: var(--editorial); text-align: left;
+      transition: color .3s;
+    }
+    .faq-question:hover { color: var(--prata-lt); }
+    .faq-icon {
+      width: 24px; height: 24px; flex-shrink: 0;
+      border: 1px solid var(--border-md);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: var(--nevoa);
+      transition: all .3s var(--ease-spring);
+    }
+    .faq-item.open .faq-icon {
+      background: rgba(139,30,45,.20);
+      border-color: rgba(139,30,45,.40);
+      color: var(--crimson-lt);
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height .5s var(--ease-expo);
+    }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-answer-inner {
+      padding: 0 0 24px;
+      font-size: 14px; color: var(--prata); line-height: 1.8;
+    }
+    .faq-answer-inner strong { color: var(--editorial); font-weight: 600; }
+
+    /* ── COMO FUNCIONA (07) ─────────────────────────────────────── */
+    #como .process-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; margin-top: 64px;
+      border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+    }
+    .process-step {
+      padding: 32px 28px;
+      border-right: 1px solid var(--border);
+    }
+    .process-step:last-child { border-right: none; }
+    .process-num {
+      font-family: var(--font-mono);
+      font-size: 11px; font-weight: 500;
+      color: var(--crimson); margin-bottom: 20px;
+    }
+    .process-title {
+      font-size: 15px; font-weight: 700;
+      color: var(--editorial); margin-bottom: 12px;
+    }
+    .process-desc {
+      font-size: 13px; color: var(--prata); line-height: 1.7;
+    }
+
+    /* ── BLOG (08) ──────────────────────────────────────────────── */
+    #blog .blog-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-top: 64px;
+    }
+    .blog-card {
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 5px;
+      transition: transform .5s var(--ease-spring);
+    }
+    .blog-card:hover { transform: translateY(-3px); }
+    .blog-card-inner {
+      background: var(--ardosia); border-radius: 11px;
+      padding: 28px 24px;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.06);
+    }
+    .blog-tags {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .blog-tag {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 9999px;
+      background: rgba(139,30,45,.12);
+      border: 1px solid rgba(139,30,45,.25);
+      color: var(--crimson-lt);
+    }
+    .blog-tag.neutral {
+      background: rgba(184,196,204,.06);
+      border-color: var(--border);
+      color: var(--nevoa-lt);
+    }
+    .blog-title {
+      font-family: var(--font-serif);
+      font-size: 20px; color: var(--editorial);
+      line-height: 1.3; margin-bottom: 12px;
+    }
+    .blog-excerpt {
+      font-size: 13px; color: var(--prata);
+      line-height: 1.7; margin-bottom: 24px;
+    }
+    .blog-meta {
+      font-size: 11px; color: var(--nevoa);
+      font-weight: 500; letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .blog-arrow {
+      float: right; color: var(--crimson-lt); font-size: 14px;
+    }
+
+    /* ── RESULTADOS (09) ────────────────────────────────────────── */
+    #resultados .resultados-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 12px; margin-top: 64px;
+    }
+    .resultado-card {
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px;
+      transition: transform .5s var(--ease-spring);
+    }
+    .resultado-card:hover { transform: translateY(-3px); }
+    .resultado-card-inner {
+      background: var(--ardosia); border-radius: 15px;
+      padding: 32px 28px;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.06);
+    }
+    .resultado-scope {
+      display: flex; gap: 10px; align-items: center;
+      margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .scope-badge {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 9999px;
+      background: rgba(139,30,45,.12);
+      border: 1px solid rgba(139,30,45,.25);
+      color: var(--crimson-lt);
+    }
+    .scope-plan {
+      font-size: 9px; color: var(--nevoa);
+      letter-spacing: .10em; text-transform: uppercase;
+      font-weight: 600;
+    }
+    .resultado-title {
+      font-family: var(--font-serif);
+      font-size: 20px; color: var(--editorial);
+      margin-bottom: 24px;
+    }
+    .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .ba-col {}
+    .ba-label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .ba-label.before { color: #E05060; }
+    .ba-label.after { color: var(--crimson-lt); }
+    .ba-list { display: flex; flex-direction: column; gap: 6px; }
+    .ba-item {
+      font-size: 12px; color: var(--prata);
+      line-height: 1.5; display: flex; gap: 8px;
+    }
+    .ba-item::before { flex-shrink: 0; }
+    .ba-item.before-item::before { content: '×'; color: #E05060; }
+    .ba-item.after-item::before { content: '✓'; color: var(--crimson-lt); }
+    .resultado-goal {
+      margin-top: 20px; padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .10em; text-transform: uppercase;
+      color: var(--nevoa);
+    }
+    .resultado-goal span { color: var(--crimson-lt); margin-left: 8px; }
+
+    /* ── ESCOPOS (10) ───────────────────────────────────────────── */
+    #escopos .filter-row {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin: 40px 0 48px;
+    }
+    .filter-btn {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: .10em; text-transform: uppercase;
+      padding: 8px 16px; border-radius: 9999px;
+      border: 1px solid var(--border-md);
+      color: var(--nevoa); background: transparent;
+      cursor: pointer; transition: all .3s var(--ease-spring);
+    }
+    .filter-btn:hover { color: var(--prata); border-color: var(--prata-lt); }
+    .filter-btn.active {
+      background: rgba(139,30,45,.20);
+      border-color: rgba(139,30,45,.40);
+      color: var(--editorial);
+    }
+    .escopos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .escopo-card {
+      background: rgba(255,255,255,.025);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 5px;
+      transition: transform .5s var(--ease-spring), opacity .3s;
+    }
+    .escopo-card:hover { transform: translateY(-3px); }
+    .escopo-card.hidden { display: none; }
+    .escopo-card-inner {
+      background: var(--ardosia); border-radius: 11px;
+      padding: 28px 24px;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.06);
+    }
+    .escopo-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; margin-bottom: 16px;
+    }
+    .escopo-mono {
+      font-family: var(--font-mono); font-size: 20px;
+      font-weight: 500; color: var(--ardosia-md);
+      letter-spacing: .05em;
+    }
+    .escopo-plan-badge {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 9999px;
+      background: rgba(139,30,45,.12);
+      border: 1px solid rgba(139,30,45,.25);
+      color: var(--crimson-lt);
+    }
+    .escopo-type {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--nevoa); margin-bottom: 6px;
+    }
+    .escopo-title {
+      font-family: var(--font-serif);
+      font-size: 20px; color: var(--editorial);
+      margin-bottom: 8px; line-height: 1.2;
+    }
+    .escopo-subtitle {
+      font-size: 12px; color: var(--nevoa);
+      margin-bottom: 20px; font-style: italic;
+    }
+    .escopo-desc {
+      font-size: 13px; color: var(--prata);
+      line-height: 1.7; margin-bottom: 20px;
+    }
+    .escopo-results { border-top: 1px solid var(--border); padding-top: 16px; }
+    .escopo-results-label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--nevoa); margin-bottom: 10px;
+    }
+    .escopo-result-items { display: flex; flex-direction: column; gap: 6px; }
+    .escopo-result-item {
+      font-size: 12px; color: var(--prata);
+      display: flex; gap: 8px; align-items: flex-start;
+    }
+    .escopo-result-item::before { content: '→'; color: var(--crimson); flex-shrink: 0; }
+    .escopo-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 16px; }
+    .escopo-tag {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: .10em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 3px;
+      border: 1px solid var(--border);
+      color: var(--nevoa);
+    }
+    .escopos-footer {
+      display: flex; gap: 48px; margin-top: 56px;
+      padding-top: 40px; border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .escopos-stat {}
+    .escopos-stat-num {
+      font-family: var(--font-serif);
+      font-size: 36px; color: var(--editorial); line-height: 1;
+      margin-bottom: 4px;
+    }
+    .escopos-stat-label {
+      font-size: 11px; color: var(--nevoa);
+      letter-spacing: .12em; text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* ── CTA / CONTATO ──────────────────────────────────────────── */
+    #cta {
+      padding: 128px 0;
+    }
+    .cta-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .cta-trust {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; color: var(--nevoa);
+      font-weight: 600; letter-spacing: .06em;
+    }
+    .trust-item::before {
+      content: '✓'; color: var(--crimson-lt);
+      font-size: 12px;
+    }
+
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--nevoa);
+    }
+    .form-group input,
+    .form-group textarea {
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border-md);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: var(--font-sans);
+      font-size: 14px; color: var(--editorial);
+      outline: none; width: 100%;
+      transition: border-color .3s;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--nevoa); }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: rgba(139,30,45,.50);
+      background: rgba(139,30,45,.04);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-char-count {
+      font-size: 11px; color: var(--nevoa);
+      text-align: right; margin-top: 2px;
+    }
+    .form-status {
+      font-size: 12px; color: var(--nevoa);
+      font-style: italic; min-height: 20px;
+    }
+    .form-submit {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--crimson); color: var(--editorial);
+      font-family: var(--font-sans);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 16px 32px; border-radius: 9999px;
+      border: none; cursor: pointer; width: 100%;
+      transition: background .3s var(--ease-spring), transform .3s;
+    }
+    .form-submit:hover { background: var(--crimson-lt); transform: translateY(-1px); }
+    .form-submit:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+
+    /* ── TICKER ─────────────────────────────────────────────────── */
+    .ticker-wrap {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      background: var(--grafite);
+    }
+    .ticker-track {
+      display: flex; gap: 0;
+      animation: ticker 28s linear infinite;
+      width: max-content;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 16px;
+      padding: 0 28px; white-space: nowrap;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .20em; text-transform: uppercase;
+      color: var(--nevoa);
+    }
+    .ticker-dot { width: 4px; height: 4px; background: var(--crimson); border-radius: 50%; }
+
+    /* ── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      padding: 64px 0 40px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 64px; margin-bottom: 64px;
+    }
+    .footer-brand .footer-logo {
+      font-family: var(--font-serif);
+      font-size: 22px; color: var(--editorial);
+      margin-bottom: 16px;
+    }
+    .footer-logo .accent { color: var(--crimson); }
+    .footer-desc {
+      font-size: 13px; color: var(--nevoa);
+      line-height: 1.7; max-width: 46ch;
+      margin-bottom: 24px;
+    }
+    .footer-social { display: flex; gap: 16px; }
+    .footer-social a {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--nevoa);
+      transition: color .3s;
+    }
+    .footer-social a:hover { color: var(--prata-lt); }
+
+    .footer-col-title {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--nevoa); margin-bottom: 20px;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a {
+      font-size: 13px; color: var(--prata);
+      transition: color .3s;
+    }
+    .footer-links a:hover { color: var(--editorial); }
+
+    .footer-newsletter { margin-top: 4px; }
+    .newsletter-input-row {
+      display: flex; gap: 0;
+      border: 1px solid var(--border-md);
+      border-radius: 8px; overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .newsletter-input {
+      flex: 1; background: transparent;
+      border: none; padding: 12px 14px;
+      font-family: var(--font-sans);
+      font-size: 13px; color: var(--editorial);
+      outline: none;
+    }
+    .newsletter-input::placeholder { color: var(--nevoa); }
+    .newsletter-submit {
+      background: var(--crimson); color: var(--editorial);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      padding: 0 16px; border: none; cursor: pointer;
+      white-space: nowrap;
+      transition: background .3s;
+    }
+    .newsletter-submit:hover { background: var(--crimson-lt); }
+    .newsletter-note {
+      font-size: 11px; color: var(--nevoa); line-height: 1.5;
+    }
+
+    .footer-bottom {
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 16px; flex-wrap: wrap;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-copy {
+      font-size: 12px; color: var(--nevoa);
+    }
+    .footer-legal {
+      font-size: 11px; color: var(--nevoa);
+    }
+
+    /* ── FLOATING WA ────────────────────────────────────────────── */
+    .wa-float {
+      position: fixed; bottom: 32px; right: 32px;
+      z-index: 100;
+      display: flex; align-items: center; gap: 10px;
+      background: var(--crimson); color: var(--editorial);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .10em; text-transform: uppercase;
+      padding: 12px 20px; border-radius: 9999px;
+      box-shadow: 0 8px 32px rgba(139,30,45,.35);
+      transition: transform .3s var(--ease-spring), box-shadow .3s;
+      cursor: pointer;
+    }
+    .wa-float:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(139,30,45,.45);
+    }
+    .wa-float svg { width: 16px; height: 16px; }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .container { padding: 0 32px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :first-child { grid-column: 1/-1; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section { padding: 80px 0; }
+      #nav { padding: 16px 20px; }
+      #nav-links { display: none; }
+      #nav-cta { display: none; }
+      #nav-hamburger { display: flex; }
+
+      #hero { padding: 120px 0 80px; }
+      #hero h1 { font-size: clamp(40px, 11vw, 72px); }
+      #hero-grid { grid-template-columns: 1fr; gap: 24px; }
+      #hero-line { display: none; }
+
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:nth-child(2n) { border-right: none; }
+
+      .problema-grid,
+      .autoridade-layout,
+      .porque-grid,
+      .metodo-layout,
+      .cta-layout { grid-template-columns: 1fr; gap: 48px; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .autoridade-cards { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .resultados-grid { grid-template-columns: 1fr; }
+      .escopos-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid > :first-child { grid-column: auto; }
+      .services-header { flex-direction: column; align-items: flex-start; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .wa-float { bottom: 16px; right: 16px; }
+    }
+    @media (max-width: 480px) {
+      #hero h1 { font-size: clamp(36px, 12vw, 60px); }
+      .process-grid { grid-template-columns: 1fr; }
+      .comparison-table th, .comparison-table td { padding: 10px 12px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to content -->
+  <a href="#main-content" class="skip-link">Pular para conteúdo</a>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="dialog" aria-label="Menu de navegação">
+    <a href="#problema" class="mobile-nav-btn" onclick="closeMobileMenu()">Por que</a>
+    <a href="#servicos" class="mobile-nav-btn" onclick="closeMobileMenu()">Serviços</a>
+    <a href="#metodo" class="mobile-nav-btn" onclick="closeMobileMenu()">Método</a>
+    <a href="#autoridade" class="mobile-nav-btn" onclick="closeMobileMenu()">Autoridade</a>
+    <a href="#faq" class="mobile-nav-btn" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#cta" class="mobile-nav-btn" onclick="closeMobileMenu()">Contato</a>
+    <a href="https://wa.me/message/6MYA5WTYF5DEH1" target="_blank" rel="noopener" class="mobile-cta-btn">Falar agora</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="nav" role="navigation" aria-label="Navegação principal">
+    <a href="#hero" id="nav-logo" aria-label="Advologos — início">
+      Advo<span class="accent">logos</span>
+    </a>
+    <div id="nav-links">
+      <button class="nav-btn" data-target="problema">Por que</button>
+      <button class="nav-btn" data-target="servicos">Serviços</button>
+      <button class="nav-btn" data-target="metodo">Método</button>
+      <button class="nav-btn" data-target="autoridade">Autoridade</button>
+      <button class="nav-btn" data-target="faq">FAQ</button>
+      <button class="nav-btn" data-target="cta">Contato</button>
+    </div>
+    <a href="https://wa.me/message/6MYA5WTYF5DEH1" target="_blank" rel="noopener" id="nav-cta">Falar agora</a>
+    <button id="nav-hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ── HERO ────────────────────────────────────────────────── -->
+    <section id="hero">
+      <svg id="hero-glow" viewBox="0 0 750 750" fill="none" aria-hidden="true">
+        <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#8B1E2D" stop-opacity=".22"/>
+          <stop offset="100%" stop-color="#8B1E2D" stop-opacity="0"/>
+        </radialGradient>
+        <circle cx="375" cy="375" r="375" fill="url(#glow1)"/>
+      </svg>
+      <div id="hero-line" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="eyebrow" data-reveal>Branding &amp; Presença Digital Jurídica</div>
+
+        <h1 data-reveal data-delay="1">
+          Marcas jurídicas<br>
+          com <em>presença,</em><br>
+          clareza e autoridade.
+        </h1>
+
+        <p id="hero-sub" data-reveal data-delay="2">
+          A Advologos estrutura a forma como o mercado percebe quem advoga.
+        </p>
+
+        <div id="hero-grid" data-reveal data-delay="2">
+          <p>A maioria dos escritórios perde clientes para concorrentes tecnicamente inferiores. O que está faltando não é competência — é a forma como ela é percebida.</p>
+          <p>Não fazemos logotipos. Arquitetamos identidades que comunicam autoridade antes da primeira conversa. Cada detalhe tem uma razão estrutural.</p>
+        </div>
+
+        <div id="hero-btns" data-reveal data-delay="3">
+          <a href="#servicos" class="btn-primary">Ver pacotes</a>
+          <a href="#metodo" class="btn-secondary">Como funciona</a>
+        </div>
+
+        <div id="hero-tags" data-reveal data-delay="4">
+          <span class="hero-tag primary">Branding Jurídico Especializado</span>
+          <span class="hero-tag primary">OAB Compliant</span>
+          <span class="hero-tag">Provimento 205/2021</span>
+          <span class="hero-tag">Sem dependência contínua</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STATS BAR ─────────────────────────────────────────── -->
+    <div id="stats-bar">
+      <div class="container">
+        <div class="stats-inner">
+          <div class="stat-item" data-reveal>
+            <div class="stat-number">
+              <span class="stat-val counter" data-target="120" data-suffix="+">0</span>
+            </div>
+            <div class="stat-label">Marcas entregues</div>
+          </div>
+          <div class="stat-item" data-reveal data-delay="1">
+            <div class="stat-number">
+              <span class="stat-val counter" data-target="97" data-suffix="%">0</span>
+            </div>
+            <div class="stat-label">Taxa de aprovação</div>
+          </div>
+          <div class="stat-item" data-reveal data-delay="2">
+            <div class="stat-number">
+              <span class="stat-val counter" data-target="3" data-suffix=" anos">0</span>
+            </div>
+            <div class="stat-label">De operação</div>
+          </div>
+          <div class="stat-item" data-reveal data-delay="3">
+            <div class="stat-number">
+              <span class="stat-val counter" data-target="3" data-suffix="x">0</span>
+            </div>
+            <div class="stat-label">Média de retorno</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 01 — PROBLEMA ─────────────────────────────────────── -->
+    <section id="problema" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>01 — O Problema</div>
+        <h2 class="section-title" data-reveal data-delay="1">Percepção é precedente.</h2>
+
+        <div class="problema-grid">
+          <div>
+            <p class="problema-highlight" data-reveal>
+              No mercado jurídico, o cliente contrata quem parece mais competente, não necessariamente quem é.
+            </p>
+            <p class="problema-body" data-reveal data-delay="1">
+              Uma marca inconsistente não é apenas um problema estético — é um problema de negócio.
+              <br><br>
+              <strong>A verdade inconveniente:</strong> um advogado brilhante com marca genérica compete em desvantagem com um colega mediano bem posicionado. A Advologos corrige essa equação — sem comprometer a ética profissional exigida pelo Provimento 205/2021 da OAB.
+            </p>
+          </div>
+          <div class="problema-stats" data-reveal data-delay="1">
+            <div class="problema-stat">
+              <div class="problema-stat-num">
+                <span class="counter" data-target="7" data-suffix="s">0</span>
+              </div>
+              <div class="problema-stat-text">
+                <strong>Primeiros segundos são decisivos</strong>
+                <p>É o tempo que um potencial cliente leva para formar uma opinião sobre um escritório com base na identidade visual.</p>
+              </div>
+            </div>
+            <div class="problema-stat">
+              <div class="problema-stat-num">
+                <span class="counter" data-target="3" data-suffix="x">0</span>
+              </div>
+              <div class="problema-stat-text">
+                <strong>Percepção multiplica conversão</strong>
+                <p>Escritórios com identidade estruturada convertem até três vezes mais consultas em clientes do que os sem sistema de marca.</p>
+              </div>
+            </div>
+            <div class="problema-stat">
+              <div class="problema-stat-num">
+                <span class="counter" data-target="78" data-suffix="%">0</span>
+              </div>
+              <div class="problema-stat-text">
+                <strong>Decisão antes do primeiro contato</strong>
+                <p>A maioria dos clientes pesquisa o escritório online e já chega com uma opinião formada sobre competência antes de qualquer conversa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 02 — SERVIÇOS ─────────────────────────────────────── -->
+    <section id="servicos" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>02 — Serviços</div>
+        <div class="services-header">
+          <div>
+            <h2 class="section-title" data-reveal data-delay="1">Quatro níveis. <em>Um sistema coerente.</em></h2>
+            <p class="section-body" data-reveal data-delay="2">Cada pacote é estruturado para um momento específico da trajetória do profissional jurídico.</p>
+          </div>
+          <div class="billing-toggle" data-reveal data-delay="2" aria-label="Alternar entre pagamento único e assinatura mensal">
+            <span class="toggle-label active" id="label-yearly">Pagamento único</span>
+            <div class="toggle-switch" id="billing-toggle" role="switch" aria-checked="false" tabindex="0"></div>
+            <span class="toggle-label" id="label-monthly">Assinatura mensal</span>
+          </div>
+        </div>
+
+        <div class="services-grid" id="services-grid">
+          <!-- Signum -->
+          <div class="service-card" data-reveal>
+            <div class="service-card-inner">
+              <span class="service-badge default">Entrada</span>
+              <h3 class="service-name">Signum</h3>
+              <p class="service-tagline">"A marca que te distingue"</p>
+              <p class="service-desc">Fundação visual completa para profissionais que iniciam sua presença de marca no mercado jurídico.</p>
+              <ul class="service-features">
+                <li class="service-feature">Logotipo Vetorial</li>
+                <li class="service-feature">Símbolo PNG</li>
+                <li class="service-feature">Marca D'Água</li>
+                <li class="service-feature">Logo Foto de Perfil para Redes Sociais</li>
+                <li class="service-feature">Assinatura de e-mail profissional</li>
+                <li class="service-feature">Mockups 3D com aplicações reais</li>
+                <li class="service-feature">Arquivos Originais</li>
+              </ul>
+              <div class="service-price service-price-yearly">
+                A partir de <strong>R$ 89,90</strong>
+                <div class="price-sub">pagamento único</div>
+              </div>
+              <a href="https://wa.me/message/6MYA5WTYF5DEH1" target="_blank" rel="noopener" class="service-cta">Solicitar proposta</a>
+            </div>
+          </div>
+
+          <!-- Nomen -->
+          <div class="service-card" data-reveal data-delay="1">
+            <div class="service-card-inner">
+              <span class="service-badge default">Profissional</span>
+              <h3 class="service-name">Nomen</h3>
+              <p class="service-tagline">"O nome que profissionaliza"</p>
+              <p class="service-desc">Tudo do Signum, mais os materiais que transformam uma marca visual em presença completa.</p>
+              <ul class="service-features">
+                <li class="service-feature">Tudo do pacote Signum</li>
+                <li class="service-feature">Cartão de Visitas Profissional (Arte)</li>
+                <li class="service-feature">Papel Timbrado Profissional (Word)</li>
+                <li class="service-feature">Kit redes sociais (3 posts + 3 stories)</li>
+              </ul>
+              <div class="service-price service-price-yearly">
+                A partir de <strong>R$ 139,99</strong>
+                <div class="price-sub">pagamento único</div>
+              </div>
+              <a href="https://wa.me/message/6MYA5WTYF5DEH1" target="_blank" rel="noopener" class="service-cta">Solicitar proposta</a>
+            </div>
+          </div>
+
+          <!-- Autoritas -->
+          <div class="service-card featured" data-reveal data-delay="2">
+            <div class="service-card-inner">
+              <span class="service-badge popular">Mais popular · Recomendado</span>
+              <h3 class="service-name">Autoritas</h3>
+              <p class="service-tagline">"A autoridade que se constrói"</p>
+              <p class="service-desc">Branding completo com presença digital estruturada. Para profissionais que querem ser percebidos como referência.</p>
+              <ul class="service-features">
+                <li class="service-feature">Tudo do Nomen, expandido</li>
+                <li class="service-feature">Landing Page</li>
+                <li class="service-feature">Manual da marca</li>
+                <li class="service-feature">Perfil Instagram estratégico</li>
+                <li class="service-feature">10 templates de conteúdo</li>
+                <li class="service-feature">Proposta comercial diagramada</li>
+                <li class="service-feature">Cartão de visita + papelaria</li>
+              </ul>
+              <div class="service-price service-price-yearly">
+                A partir de <strong>R$ 290</strong>
+                <div class="price-sub">pagamento único</div>
+              </div>
+              <div class="service-price service-price-monthly" style="display:none">
+                A partir de <strong>R$ 97/mês</strong>
+                <div class="price-sub">12× · sem juros</div>
+              </div>
+              <a href="https://wa.me/message/6MYA5WTYF5DEH1" target="_blank" rel="noopener" class="service-cta featured-cta">Solicitar proposta</a>
+            </div>
+          </div>
+
+          <!-- Imperium -->
+          <div class="service-card" data-reveal data-delay="3">
+            <div class="service-card-inner">
+              <span class="service-badge premium">Premium</span>
+              <h3 class="service-name">Imperium</h3>
+              <p class="service-tagline">"A presença que precede a conversa"</p>
+              <p class="service-desc">Sistema completo de marca e presença digital para escritórios que precisam comunicar autoridade em múltiplos canais.</p>
+              <ul class="service-features">
+                <li class="service-feature">Tudo do Autoritas, ampliado</li>
+                <li class="service-feature">Site completo multi-página</li>
+                <li class="service-feature">Estratégia de conteúdo 90 dias</li>
+                <li class="service-feature">Brand guidelines interativo</li>
+                <li class="service-feature">Consultoria de posicionamento</li>
+                <li class="service-feature">Suporte mensal 3 meses</li>
+              </ul>
+              <div class="service-price service-price-yearly">
+                A partir de <strong>R$ 890</strong>
+                <div class="price-sub">pagamento único</div>
+              </div>
+              <div class="service-price service-price-monthly" style="display:none">
+                A partir de <strong>R$ 297/mês</strong>
+                <div class="price-sub">12× · sem juros</div>
+              </div>
+              <a href="https://wa.me/message/6MYA5WTYF5DEH1" target="_blank" rel="noopener" class="service-cta">Solicitar proposta</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison table -->
+        <div data-reveal>
+          <div class="comparison-header">
+            <h3 class="section-title" style="font-size:clamp(24px,3vw,38px);margin-bottom:8px;">Compare os pacotes</h3>
+            <p class="section-body" style="font-size:13px;">Veja a progressão real de cada pacote e compare o formato avulso e as versões por assinatura de Autoritas e Imperium.</p>
+          </div>
+          <div class="table-wrap">
+            <table class="comparison-table" aria-label="Comparativo de pacotes">
+              <thead>
+                <tr>
+                  <th>Recurso</th>
+                  <th>Signum<br><span style="font-weight:400;opacity:.7">Entrada</span></th>
+                  <th>Nomen<br><span style="font-weight:400;opacity:.7">Profissional</span></th>
+                  <th class="col-featured">Autoritas<br><span style="font-weight:400;opacity:.7">Recomendado</span></th>
+                  <th>Imperium<br><span style="font-weight:400;opacity:.7">Premium</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Logotipo Vetorial</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Símbolo PNG</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Marca D'Água</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Logo para Redes Sociais</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Assinatura de e-mail</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Mockups 3D</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Arquivos Originais</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Cartão de Visitas (Arte)</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Papel Timbrado (Word)</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Kit Redes Sociais</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Landing Page</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Manual da Marca</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Perfil Instagram estratégico</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>10 templates de conteúdo</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Proposta comercial diagramada</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Site completo multi-página</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Estratégia de conteúdo 90 dias</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Brand guidelines interativo</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Consultoria de posicionamento</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+                <tr><td>Suporte mensal 3 meses</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td class="col-featured"><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+                <tr class="table-price-row">
+                  <td>Preço</td>
+                  <td>R$ 89,90</td>
+                  <td>R$ 139,99</td>
+                  <td class="col-featured" style="color:var(--crimson-lt)">R$ 290</td>
+                  <td>R$ 890</td>
+                </tr>
+                <tr class="table-total-row">
+                  <td>Total de recursos</td>
+                  <td>7 / 20</td>
+                  <td>10 / 20</td>
+                  <td class="col-featured">15 / 20</td>
+                  <td>20 / 20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">Deslize para ver mais ↔</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 03 — MÉTODO ───────────────────────────────────────── -->
+    <section id="metodo" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>03 — Método</div>
+        <h2 class="section-title" data-reveal data-delay="1">Estrutura antes de estética.</h2>
+
+        <div class="metodo-layout" style="margin-top:56px;">
+          <div class="metodo-steps" data-reveal>
+            <div class="metodo-step">
+              <span class="step-num">01</span>
+              <div class="step-content">
+                <div class="step-title">Diagnóstico de Percepção</div>
+                <p class="step-desc">Analisamos como o profissional é percebido hoje e como precisa ser percebido para atingir seus objetivos. A marca começa no problema de negócio, não no estilo.</p>
+              </div>
+            </div>
+            <div class="metodo-step">
+              <span class="step-num">02</span>
+              <div class="step-content">
+                <div class="step-title">Estratégia de Posicionamento</div>
+                <p class="step-desc">Definimos o território de marca: área de atuação, público prioritário, diferencial competitivo e tom de voz. Tudo documentado antes do primeiro traço de design.</p>
+              </div>
+            </div>
+            <div class="metodo-step">
+              <span class="step-num">03</span>
+              <div class="step-content">
+                <div class="step-title">Construção do Sistema Visual</div>
+                <p class="step-desc">Logotipo, cores, tipografia e elementos gráficos desenvolvidos como um sistema, não como peças isoladas. Cada decisão tem uma razão estrutural documentada.</p>
+              </div>
+            </div>
+            <div class="metodo-step">
+              <span class="step-num">04</span>
+              <div class="step-content">
+                <div class="step-title">Aplicação e Presença Digital</div>
+                <p class="step-desc">A identidade é aplicada em todos os pontos de contato definidos no pacote: site, redes sociais, materiais impressos e templates operacionais.</p>
+              </div>
+            </div>
+            <div class="metodo-step">
+              <span class="step-num">05</span>
+              <div class="step-content">
+                <div class="step-title">Entrega e Documentação</div>
+                <p class="step-desc">Brand guidelines completo, arquivos originais organizados e instruções de uso. A marca entregue é operável sem a Advologos, por design.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="metodo-side" data-reveal data-delay="1">
+            <div class="metodo-quote">
+              <blockquote>"Um império pode continuar sem o imperador. Mas não há imperador sem o império."</blockquote>
+              <cite>— Princípio operacional da Advologos</cite>
+            </div>
+            <div class="metodo-diff-list">
+              <div class="metodo-diff-item">Alinhado ao Provimento 205/2021 da OAB</div>
+              <div class="metodo-diff-item">Arquivos em formatos profissionais editáveis</div>
+              <div class="metodo-diff-item">Manual de uso com todos os contextos mapeados</div>
+              <div class="metodo-diff-item">Sistema pensado para escalar, não engavetar</div>
+              <div class="metodo-diff-item">Sem dependência contínua de agência para operar</div>
+              <div class="metodo-diff-item">Revisões documentadas e aprovação etapa por etapa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04 — QUEM SOMOS / AUTORIDADE ──────────────────────── -->
+    <section id="autoridade" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>04 — Quem Somos</div>
+        <h2 class="section-title" data-reveal data-delay="1">Não somos uma agência genérica.<br><em>Somos especialistas em marcas jurídicas.</em></h2>
+
+        <div class="autoridade-layout" style="margin-top:56px;">
+          <div data-reveal>
+            <p class="autoridade-body">A Advologos nasceu de uma constatação: o mercado jurídico é um dos mais regulados do Brasil, mas a forma como profissionais e escritórios se comunicam visualmente ainda é tratada como acessório. Mudamos essa realidade — com método, critério e conhecimento profundo das regras que governam a advocacia.</p>
+            <p class="autoridade-body">Cada projeto é conduzido por profissionais que entendem tanto branding quanto o Provimento 205/2021 da OAB. Não fazemos adaptações genéricas — construímos sistemas de marca sob medida para quem atua no direito.</p>
+          </div>
+          <div class="autoridade-pillars" data-reveal data-delay="1">
+            <div class="pillar">
+              <div class="pillar-title">Estratégia</div>
+              <p class="pillar-desc">Cada marca começa com posicionamento. Definimos arcos narrativos alinhados ao mercado jurídico.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Design</div>
+              <p class="pillar-desc">Criamos sistemas visuais completos — do logotipo à papelaria — com coerência estética.</p>
+            </div>
+            <div class="pillar">
+              <div class="pillar-title">Implementação</div>
+              <p class="pillar-desc">Acompanhamos a aplicação da marca em todos os pontos de contato digitais e físicos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="autoridade-cards" data-reveal>
+          <div class="autoridade-card">
+            <div class="autoridade-card-inner">
+              <div class="ac-label">Especialização jurídica</div>
+              <div class="ac-title">Foco, não nicho</div>
+              <p class="ac-desc">Conhecemos as restrições éticas, o vocabulário técnico e a forma como o cliente jurídico toma decisões.</p>
+            </div>
+          </div>
+          <div class="autoridade-card">
+            <div class="autoridade-card-inner">
+              <div class="ac-label">Sistemas, não peças</div>
+              <div class="ac-title">Identidades que funcionam</div>
+              <p class="ac-desc">Entregamos identidades que funcionam em qualquer contexto, não logotipos bonitos que perdem coerência no segundo uso.</p>
+            </div>
+          </div>
+          <div class="autoridade-card">
+            <div class="autoridade-card-inner">
+              <div class="ac-label">Método documentado</div>
+              <div class="ac-title">Raciocínio, não gosto</div>
+              <p class="ac-desc">Cada decisão tem uma justificativa estratégica. O cliente recebe o raciocínio, não apenas o resultado.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="oab-badge" data-reveal>
+          <div class="oab-badge-inner">
+            <div class="oab-icon" aria-hidden="true">⚖</div>
+            <div>
+              <div class="oab-title">Conformidade OAB</div>
+              <p class="oab-desc">Todo o trabalho desenvolvido pela Advologos respeita integralmente o <strong>Provimento 205/2021</strong> do Conselho Federal da OAB — que regulamenta a publicidade e o marketing na advocacia. Nenhuma entrega viola as regras de publicidade ética da profissão.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 05 — POR QUÊ A ADVOLOGOS ─────────────────────────── -->
+    <section id="porque" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>05 — Por que a Advologos</div>
+        <h2 class="section-title" data-reveal data-delay="1">A marca que entrega é a que <em>demonstra.</em></h2>
+
+        <div class="porque-grid" style="margin-top:56px;">
+          <div class="porque-features" data-reveal>
+            <div class="porque-feature">
+              <div class="pf-title">Especialização jurídica</div>
+              <p class="pf-desc">Conhecemos as restrições éticas, o vocabulário técnico e a forma como o cliente jurídico toma decisões. Não é nicho, é foco.</p>
+            </div>
+            <div class="porque-feature">
+              <div class="pf-title">Sistemas, não peças</div>
+              <p class="pf-desc">Entregamos identidades que funcionam em qualquer contexto, não logotipos bonitos que perdem coerência no segundo uso.</p>
+            </div>
+            <div class="porque-feature">
+              <div class="pf-title">Método documentado</div>
+              <p class="pf-desc">Cada decisão tem uma justificativa estratégica. O cliente recebe o raciocínio, não apenas o resultado, porque marca é decisão, não gosto.</p>
+            </div>
+          </div>
+
+          <div data-reveal data-delay="1">
+            <div class="porque-quote">
+              <div class="porque-quote-inner">
+                <blockquote>"Conhecemos as restrições éticas, o vocabulário técnico e a forma como o cliente jurídico toma decisões."</blockquote>
+              </div>
+            </div>
+            <div class="oab-badge">
+              <div class="oab-badge-inner" style="flex-direction:column;gap:12px;">
+                <div class="ac-label">Escopo da operação</div>
+                <p class="oab-desc">Especialização jurídica em cada etapa — do posicionamento à entrega dos arquivos finais, com conformidade total ao Provimento 205/2021 da OAB.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 06 — FAQ ──────────────────────────────────────────── -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="faq-header">
+          <div>
+            <div class="label-caps" data-reveal>06 — Perguntas Frequentes</div>
+            <h2 class="section-title" data-reveal data-delay="1">Dúvidas comuns.<br><em>Respostas diretas.</em></h2>
+          </div>
+          <div class="faq-count" data-reveal data-delay="1">Exibindo 6 de 6 perguntas</div>
+        </div>
+        <div class="faq-list" data-reveal data-delay="1">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Preciso ter um escritório grande para contratar a Advologos?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Não. A Advologos atende advogados individuais, sócios em início de trajetória e escritórios de qualquer porte. O <strong>Signum</strong> foi desenhado especificamente para quem está estruturando sua presença pela primeira vez. O que determina o pacote é o momento do profissional, não o tamanho da operação.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              O trabalho da Advologos respeita as regras da OAB?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Sim. Todo o trabalho desenvolvido pela Advologos está em conformidade com o <strong>Provimento 205/2021</strong> do Conselho Federal da OAB, que regulamenta a publicidade na advocacia. Não criamos conteúdo que prometa resultados, não usamos testemunhos que violem o código, e orientamos ativamente nossos clientes sobre o que é e o que não é permitido.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Quanto tempo leva um projeto de branding?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Depende do pacote. O <strong>Signum</strong> tem prazo estimado de 5 a 7 dias úteis. O <strong>Nomen</strong>, de 7 a 10 dias. O <strong>Autoritas</strong>, de 15 a 20 dias. E o <strong>Imperium</strong>, entre 25 e 35 dias úteis, dado o escopo ampliado. Os prazos iniciam após aprovação do briefing e das referências.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              A Advologos cria conteúdo para redes sociais?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Sim — de forma estruturada. Os pacotes <strong>Autoritas</strong> e <strong>Imperium</strong> incluem templates de conteúdo e estratégia de perfil. Para o Autoritas são 10 templates estratégicos. Para o Imperium, uma estratégia de conteúdo de 90 dias. A produção contínua de conteúdo é feita pelo próprio cliente com base nos templates entregues.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Posso migrar de um pacote para outro durante o projeto?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Sim. O upgrade de pacote é possível mediante análise do estágio atual do projeto. O valor já pago é abatido do pacote superior — sem perda do que já foi produzido. Pedimos que upgrades sejam solicitados antes da fase de construção do sistema visual para facilitar a integração.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              O que acontece se uma entrega precisar de ajuste?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Cada etapa inclui rodadas de revisão documentadas. O cliente aprova antes de avançar, então ajustes são estruturais, não surpresas. Após a entrega final, revisões de adequação dentro do escopo contratado têm prazo de 7 dias para solicitação. Revisões fora do escopo são orçadas separadamente.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 07 — COMO FUNCIONA ────────────────────────────────── -->
+    <section id="como" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>07 — Como funciona</div>
+        <h2 class="section-title" data-reveal data-delay="1">Do primeiro contato à<br><em>marca entregue.</em></h2>
+        <p class="section-body" data-reveal data-delay="2">Um processo claro, documentado e sem surpresas. Você acompanha cada fase e aprova antes de avançar.</p>
+
+        <div class="process-grid" data-reveal data-delay="2">
+          <div class="process-step">
+            <div class="process-num">01</div>
+            <div class="process-title">Primeiro contato</div>
+            <p class="process-desc">Envie sua mensagem pelo WhatsApp ou formulário. O retorno acontece pelo canal informado, com contexto e sem resposta automática genérica.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">02</div>
+            <div class="process-title">Diagnóstico inicial</div>
+            <p class="process-desc">Analisamos seu cenário atual e apresentamos um plano personalizado — sem compromisso.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">03</div>
+            <div class="process-title">Projeto em andamento</div>
+            <p class="process-desc">Acompanhe cada etapa em tempo real. Revisões documentadas e aprovação por fase.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-num">04</div>
+            <div class="process-title">Entrega + documentação</div>
+            <p class="process-desc">Marca entregue com brand guidelines, arquivos originais e instruções de uso completas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 08 — BLOG ─────────────────────────────────────────── -->
+    <section id="blog" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>08 — Blog &amp; Conteúdo</div>
+        <h2 class="section-title" data-reveal data-delay="1">Insights sobre<br><em>branding jurídico.</em></h2>
+
+        <div class="blog-grid">
+          <div class="blog-card" data-reveal>
+            <div class="blog-card-inner">
+              <div class="blog-tags">
+                <span class="blog-tag neutral">Em preparação</span>
+                <span class="blog-tag">Branding</span>
+              </div>
+              <h3 class="blog-title">Estrutura de marca para profissionais do direito</h3>
+              <p class="blog-excerpt">Como transformar identidade visual, tom de voz e aplicações em um sistema coerente para o mercado jurídico.</p>
+              <div class="blog-meta">Conteúdo editorial · Estrutura em andamento <span class="blog-arrow">↗</span></div>
+            </div>
+          </div>
+          <div class="blog-card" data-reveal data-delay="1">
+            <div class="blog-card-inner">
+              <div class="blog-tags">
+                <span class="blog-tag neutral">Em preparação</span>
+                <span class="blog-tag">Posicionamento</span>
+              </div>
+              <h3 class="blog-title">Presença digital com clareza regulatória</h3>
+              <p class="blog-excerpt">Diretrizes para comunicar autoridade sem promessas infladas e sem violar os limites éticos da advocacia.</p>
+              <div class="blog-meta">Conteúdo editorial · Estrutura em andamento <span class="blog-arrow">↗</span></div>
+            </div>
+          </div>
+          <div class="blog-card" data-reveal data-delay="2">
+            <div class="blog-card-inner">
+              <div class="blog-tags">
+                <span class="blog-tag neutral">Em preparação</span>
+                <span class="blog-tag">Mercado Legal</span>
+              </div>
+              <h3 class="blog-title">Percepção, coerência e valor percebido</h3>
+              <p class="blog-excerpt">Temas editoriais que conectam forma, critério e posicionamento para escritórios e advogados.</p>
+              <div class="blog-meta">Conteúdo editorial · Estrutura em andamento <span class="blog-arrow">↗</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 09 — RESULTADOS ───────────────────────────────────── -->
+    <section id="resultados" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>09 — Resultados</div>
+        <h2 class="section-title" data-reveal data-delay="1">Antes da Advologos.<br><em>Depois da marca.</em></h2>
+        <p class="section-body" data-reveal data-delay="2">Referências de transformação típicas para quem deixa de tratar marca como peça solta e passa a operar com sistema.</p>
+
+        <div class="resultados-grid">
+          <div class="resultado-card" data-reveal>
+            <div class="resultado-card-inner">
+              <div class="resultado-scope">
+                <span class="scope-badge">Escopo inicial de marca</span>
+                <span class="scope-plan">Signum</span>
+              </div>
+              <h3 class="resultado-title">Advocacia individual em estruturação</h3>
+              <div class="ba-grid">
+                <div class="ba-col">
+                  <div class="ba-label before">Antes</div>
+                  <ul class="ba-list">
+                    <li class="ba-item before-item">Logo isolado</li>
+                    <li class="ba-item before-item">Aplicações sem padrão</li>
+                    <li class="ba-item before-item">Tom de voz inconsistente</li>
+                    <li class="ba-item before-item">Presença digital improvisada</li>
+                  </ul>
+                </div>
+                <div class="ba-col">
+                  <div class="ba-label after">Depois</div>
+                  <ul class="ba-list">
+                    <li class="ba-item after-item">Sistema visual base</li>
+                    <li class="ba-item after-item">Diretrizes de uso</li>
+                    <li class="ba-item after-item">Pontos de contato padronizados</li>
+                    <li class="ba-item after-item">Marca operável desde o primeiro ciclo</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="resultado-goal">Objetivo principal<span>Clareza</span></div>
+            </div>
+          </div>
+
+          <div class="resultado-card" data-reveal data-delay="1">
+            <div class="resultado-card-inner">
+              <div class="resultado-scope">
+                <span class="scope-badge">Profissionalização dos pontos de contato</span>
+                <span class="scope-plan">Nomen</span>
+              </div>
+              <h3 class="resultado-title">Profissional em fase de consolidação</h3>
+              <div class="ba-grid">
+                <div class="ba-col">
+                  <div class="ba-label before">Antes</div>
+                  <ul class="ba-list">
+                    <li class="ba-item before-item">Identidade sem desdobramentos</li>
+                    <li class="ba-item before-item">Perfil e bio sem critério</li>
+                    <li class="ba-item before-item">Materiais profissionais ausentes</li>
+                    <li class="ba-item before-item">Apresentação fragmentada</li>
+                  </ul>
+                </div>
+                <div class="ba-col">
+                  <div class="ba-label after">Depois</div>
+                  <ul class="ba-list">
+                    <li class="ba-item after-item">Cartão e papel timbrado alinhados</li>
+                    <li class="ba-item after-item">Bio e foto de perfil padronizadas</li>
+                    <li class="ba-item after-item">Kit inicial para redes sociais</li>
+                    <li class="ba-item after-item">Presença mais consistente</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="resultado-goal">Objetivo principal<span>Profissionalização</span></div>
+            </div>
+          </div>
+
+          <div class="resultado-card" data-reveal data-delay="1">
+            <div class="resultado-card-inner">
+              <div class="resultado-scope">
+                <span class="scope-badge">Reposicionamento de percepção</span>
+                <span class="scope-plan">Autoritas</span>
+              </div>
+              <h3 class="resultado-title">Escritório boutique em rebranding</h3>
+              <div class="ba-grid">
+                <div class="ba-col">
+                  <div class="ba-label before">Antes</div>
+                  <ul class="ba-list">
+                    <li class="ba-item before-item">Peças desconectadas</li>
+                    <li class="ba-item before-item">Website e social sem unidade</li>
+                    <li class="ba-item before-item">Mensagem pouco precisa</li>
+                    <li class="ba-item before-item">Materiais comerciais genéricos</li>
+                  </ul>
+                </div>
+                <div class="ba-col">
+                  <div class="ba-label after">Depois</div>
+                  <ul class="ba-list">
+                    <li class="ba-item after-item">Posicionamento documentado</li>
+                    <li class="ba-item after-item">Aplicações digitais coerentes</li>
+                    <li class="ba-item after-item">Templates estratégicos</li>
+                    <li class="ba-item after-item">Proposta visual unificada</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="resultado-goal">Objetivo principal<span>Consistência</span></div>
+            </div>
+          </div>
+
+          <div class="resultado-card" data-reveal data-delay="2">
+            <div class="resultado-card-inner">
+              <div class="resultado-scope">
+                <span class="scope-badge">Estruturação ampliada de marca</span>
+                <span class="scope-plan">Imperium</span>
+              </div>
+              <h3 class="resultado-title">Operação jurídica com presença fragmentada</h3>
+              <div class="ba-grid">
+                <div class="ba-col">
+                  <div class="ba-label before">Antes</div>
+                  <ul class="ba-list">
+                    <li class="ba-item before-item">Marca sem sistema</li>
+                    <li class="ba-item before-item">Múltiplos canais sem critério</li>
+                    <li class="ba-item before-item">Baixa coerência visual</li>
+                    <li class="ba-item before-item">Falta de documentação interna</li>
+                  </ul>
+                </div>
+                <div class="ba-col">
+                  <div class="ba-label after">Depois</div>
+                  <ul class="ba-list">
+                    <li class="ba-item after-item">Arquitetura visual escalável</li>
+                    <li class="ba-item after-item">Guidelines completos</li>
+                    <li class="ba-item after-item">Presença digital integrada</li>
+                    <li class="ba-item after-item">Base para expansão com consistência</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="resultado-goal">Objetivo principal<span>Autoridade</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 10 — ESCOPOS ──────────────────────────────────────── -->
+    <section id="escopos" class="section">
+      <div class="container">
+        <div class="label-caps" data-reveal>10 — Escopos</div>
+        <h2 class="section-title" data-reveal data-delay="1">Formatos de <em>entrega.</em></h2>
+        <p class="section-body" data-reveal data-delay="2">Exemplos de escopo para mostrar como a Advologos distribui marca, presença digital e documentação ao longo dos pacotes.</p>
+
+        <div class="filter-row" data-reveal data-delay="2">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="marca-base">Marca Base</button>
+          <button class="filter-btn" data-filter="reposicionamento">Reposicionamento</button>
+          <button class="filter-btn" data-filter="sistema-visual">Sistema Visual</button>
+          <button class="filter-btn" data-filter="presenca-digital">Presença Digital</button>
+          <button class="filter-btn" data-filter="aplicacoes">Aplicações</button>
+          <button class="filter-btn" data-filter="documentacao">Documentação</button>
+        </div>
+
+        <div class="escopos-grid">
+          <div class="escopo-card" data-reveal data-category="marca-base">
+            <div class="escopo-card-inner">
+              <div class="escopo-header">
+                <span class="escopo-mono">II</span>
+                <span class="escopo-plan-badge">Signum</span>
+              </div>
+              <div class="escopo-type">Marca Base</div>
+              <h3 class="escopo-title">Identidade Inicial</h3>
+              <p class="escopo-subtitle">Fundação para posicionamento</p>
+              <p class="escopo-desc">Escopo pensado para advogados e escritórios em fase de organização visual e primeira presença pública coerente.</p>
+              <div class="escopo-results">
+                <div class="escopo-results-label">Resultados</div>
+                <div class="escopo-result-items">
+                  <div class="escopo-result-item">Logotipo e sistema visual base</div>
+                  <div class="escopo-result-item">Manual essencial de uso</div>
+                  <div class="escopo-result-item">Assinatura e aplicações iniciais</div>
+                </div>
+              </div>
+              <div class="escopo-tags">
+                <span class="escopo-tag">Identidade</span>
+                <span class="escopo-tag">Manual</span>
+                <span class="escopo-tag">Aplicações</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="escopo-card" data-reveal data-delay="1" data-category="reposicionamento">
+            <div class="escopo-card-inner">
+              <div class="escopo-header">
+                <span class="escopo-mono">RC</span>
+                <span class="escopo-plan-badge">Autoritas</span>
+              </div>
+              <div class="escopo-type">Reposicionamento</div>
+              <h3 class="escopo-title">Rebranding Completo</h3>
+              <p class="escopo-subtitle">Reposicionamento com critério</p>
+              <p class="escopo-desc">Formato para quem já atua no mercado, mas precisa alinhar percepção, mensagem e presença digital com mais autoridade.</p>
+              <div class="escopo-results">
+                <div class="escopo-results-label">Resultados</div>
+                <div class="escopo-result-items">
+                  <div class="escopo-result-item">Reposicionamento visual documentado</div>
+                  <div class="escopo-result-item">Aplicações digitais alinhadas</div>
+                  <div class="escopo-result-item">Templates estratégicos</div>
+                </div>
+              </div>
+              <div class="escopo-tags">
+                <span class="escopo-tag">Rebranding</span>
+                <span class="escopo-tag">Templates</span>
+                <span class="escopo-tag">Website</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="escopo-card" data-reveal data-delay="2" data-category="sistema-visual">
+            <div class="escopo-card-inner">
+              <div class="escopo-header">
+                <span class="escopo-mono">SD</span>
+                <span class="escopo-plan-badge">Imperium</span>
+              </div>
+              <div class="escopo-type">Sistema Visual</div>
+              <h3 class="escopo-title">Sistema de Marca</h3>
+              <p class="escopo-subtitle">Escala com consistência</p>
+              <p class="escopo-desc">Projeto voltado a operações que precisam aplicar a marca em múltiplos canais com documentação robusta e critérios claros.</p>
+              <div class="escopo-results">
+                <div class="escopo-results-label">Resultados</div>
+                <div class="escopo-result-items">
+                  <div class="escopo-result-item">Brand guidelines ampliado</div>
+                  <div class="escopo-result-item">Estratégia de conteúdo base</div>
+                  <div class="escopo-result-item">Aplicações multi-canal</div>
+                </div>
+              </div>
+              <div class="escopo-tags">
+                <span class="escopo-tag">Guidelines</span>
+                <span class="escopo-tag">Estratégia</span>
+                <span class="escopo-tag">Escalabilidade</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="escopo-card" data-reveal data-category="presenca-digital">
+            <div class="escopo-card-inner">
+              <div class="escopo-header">
+                <span class="escopo-mono">WI</span>
+                <span class="escopo-plan-badge">Autoritas</span>
+              </div>
+              <div class="escopo-type">Presença Digital</div>
+              <h3 class="escopo-title">Website Institucional</h3>
+              <p class="escopo-subtitle">Presença digital principal</p>
+              <p class="escopo-desc">Escopo de presença digital para quem precisa traduzir posicionamento em um website claro, coerente e alinhado à marca.</p>
+              <div class="escopo-results">
+                <div class="escopo-results-label">Resultados</div>
+                <div class="escopo-result-items">
+                  <div class="escopo-result-item">Arquitetura visual para site</div>
+                  <div class="escopo-result-item">Hierarquia de conteúdo</div>
+                  <div class="escopo-result-item">CTA e presença institucional</div>
+                </div>
+              </div>
+              <div class="escopo-tags">
+                <span class="escopo-tag">Website</span>
+                <span class="escopo-tag">Conteúdo</span>
+                <span class="escopo-tag">Hierarquia</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="escopo-card" data-reveal data-delay="1" data-category="aplicacoes">
+            <div class="escopo-card-inner">
+              <div class="escopo-header">
+                <span class="escopo-mono">TO</span>
+                <span class="escopo-plan-badge">Autoritas</span>
+              </div>
+              <div class="escopo-type">Aplicações</div>
+              <h3 class="escopo-title">Templates Operacionais</h3>
+              <p class="escopo-subtitle">Rotina visual consistente</p>
+              <p class="escopo-desc">Conjunto de peças para manter coerência no cotidiano da operação, da proposta comercial às publicações de presença digital.</p>
+              <div class="escopo-results">
+                <div class="escopo-results-label">Resultados</div>
+                <div class="escopo-result-items">
+                  <div class="escopo-result-item">Templates para conteúdo</div>
+                  <div class="escopo-result-item">Peças institucionais</div>
+                  <div class="escopo-result-item">Sistema replicável pela equipe</div>
+                </div>
+              </div>
+              <div class="escopo-tags">
+                <span class="escopo-tag">Templates</span>
+                <span class="escopo-tag">Rotina</span>
+                <span class="escopo-tag">Operação</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="escopo-card" data-reveal data-delay="2" data-category="documentacao">
+            <div class="escopo-card-inner">
+              <div class="escopo-header">
+                <span class="escopo-mono">GI</span>
+                <span class="escopo-plan-badge">Imperium</span>
+              </div>
+              <div class="escopo-type">Documentação</div>
+              <h3 class="escopo-title">Guidelines Interativo</h3>
+              <p class="escopo-subtitle">Documentação viva da marca</p>
+              <p class="escopo-desc">Entrega para equipes que precisam operar a marca com autonomia, clareza de uso e padrão replicável em novos canais.</p>
+              <div class="escopo-results">
+                <div class="escopo-results-label">Resultados</div>
+                <div class="escopo-result-items">
+                  <div class="escopo-result-item">Critérios de aplicação</div>
+                  <div class="escopo-result-item">Regras de uso por contexto</div>
+                  <div class="escopo-result-item">Base para expansão sem ruído</div>
+                </div>
+              </div>
+              <div class="escopo-tags">
+                <span class="escopo-tag">Documentação</span>
+                <span class="escopo-tag">Governança</span>
+                <span class="escopo-tag">Marca</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="escopos-footer" data-reveal>
+          <div class="escopos-stat">
+            <div class="escopos-stat-num">6</div>
+            <div class="escopos-stat-label">Escopos mapeados</div>
+          </div>
+          <div class="escopos-stat">
+            <div class="escopos-stat-num">4</div>
+            <div class="escopos-stat-label">Pacotes base</div>
+          </div>
+          <div class="escopos-stat">
+            <div class="escopos-stat-num">1</div>
+            <div class="escopos-stat-label">sistema de linguagem coerente</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA / CONTATO ────────────────────────────────────── -->
+    <section id="cta" class="section" style="border-bottom:none;">
+      <div class="container">
+        <div class="cta-layout">
+          <div data-reveal>
+            <div class="label-caps">Pronto para começar?</div>
+            <h2 class="section-title">A presença que o mercado <em>percebe</em> começa aqui.</h2>
+            <p class="section-body">Solicite uma proposta sem compromisso. Analisamos seu contexto e apresentamos o pacote adequado para onde você está e para onde quer chegar.</p>
+            <div class="cta-trust">
+              <div class="trust-item">Dados protegidos</div>
+              <div class="trust-item">Resposta em até 24h</div>
+              <div class="trust-item">Sem compromisso</div>
+            </div>
+          </div>
+
+          <div data-reveal data-delay="1">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="cf-nome">Nome</label>
+                <input type="text" id="cf-nome" name="nome" placeholder="Seu nome completo" required autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="cf-email">E-mail</label>
+                <input type="email" id="cf-email" name="email" placeholder="seu@email.com.br" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="cf-whatsapp">WhatsApp</label>
+                <input type="tel" id="cf-whatsapp" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="cf-mensagem">Mensagem</label>
+                <textarea id="cf-mensagem" name="mensagem" maxlength="500" placeholder="Conte sobre seu contexto e o que você precisa…"></textarea>
+                <div class="form-char-count"><span id="char-count">0</span>/500</div>
+              </div>
+              <div class="form-status" id="form-status" aria-live="polite"></div>
+              <button type="submit" class="form-submit" id="form-submit">
+                Enviar mensagem
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TICKER ─────────────────────────────────────────────── -->
+    <div class="ticker-wrap" aria-hidden="true">
+      <div class="ticker-track">
+        <!-- Duplicated for seamless loop -->
+        <span class="ticker-item">Branding Jurídico<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Posicionamento<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Identidade Visual<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Presença Digital<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Legal Design<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Brand Guidelines<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Branding Jurídico<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Posicionamento<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Identidade Visual<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Presença Digital<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Legal Design<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Brand Guidelines<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Branding Jurídico<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Posicionamento<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Identidade Visual<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Presença Digital<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Legal Design<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Brand Guidelines<span class="ticker-dot"></span></span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Advo<span class="accent">logos</span></div>
+          <p class="footer-desc">A Advologos estrutura a forma como o mercado percebe quem advoga. Branding jurídico especializado com identidade visual, presença digital e autoridade de marca.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/advologos/" target="_blank" rel="noopener" aria-label="Instagram da Advologos">Instagram</a>
+            <a href="https://www.facebook.com/advologos" target="_blank" rel="noopener" aria-label="Facebook da Advologos">Facebook</a>
+            <a href="mailto:advologos@gmail.com" aria-label="Enviar e-mail para Advologos">E-mail</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navegação</div>
+          <nav class="footer-links" aria-label="Links do rodapé">
+            <a href="#problema">Por que</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#metodo">Método</a>
+            <a href="#autoridade">Autoridade</a>
+            <a href="#faq">Perguntas frequentes</a>
+            <a href="#cta">Contato</a>
+          </nav>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Receba insights</div>
+          <div class="footer-newsletter">
+            <div class="newsletter-input-row">
+              <input type="email" class="newsletter-input" placeholder="seu@email.com.br" aria-label="E-mail para newsletter" id="newsletter-email">
+              <button class="newsletter-submit" id="newsletter-submit" type="button">Inscrever</button>
+            </div>
+            <p class="newsletter-note">Sem spam. Apenas conteúdo relevante sobre branding jurídico.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2022 — 2026 Advologos. Uso e aplicação sujeitos às diretrizes de marca.</span>
+        <span class="footer-legal">Marcas jurídicas com presença, clareza e autoridade.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── FLOATING CTA ──────────────────────────────────────── -->
+  <a href="https://wa.me/message/6MYA5WTYF5DEH1" target="_blank" rel="noopener" class="wa-float" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    Conversar no WhatsApp
+  </a>
+
+  <!-- ── JAVASCRIPT ─────────────────────────────────────────── -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* ── Scroll reveal ─────────────────────────────────────────── */
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: .07, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
+
+    /* ── Counter animation ─────────────────────────────────────── */
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const startTime = performance.now();
+
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = current + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          counterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: .3 });
+
+    document.querySelectorAll('.counter[data-target]').forEach(el => counterObs.observe(el));
+
+    /* ── Nav scroll state ──────────────────────────────────────── */
+    const nav = document.getElementById('nav');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          nav.classList.toggle('scrolled', window.scrollY > 60);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    /* ── Nav active section tracking ───────────────────────────── */
+    const navBtns = document.querySelectorAll('.nav-btn');
+    const sections = document.querySelectorAll('section[id], div[id="stats-bar"]');
+
+    const sectionObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.target === e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => sectionObs.observe(s));
+
+    /* ── Nav button smooth scroll ──────────────────────────────── */
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const t = document.getElementById(btn.dataset.target);
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    /* ── Logo scroll to top ────────────────────────────────────── */
+    document.getElementById('nav-logo').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ── Hero mouse parallax glow ──────────────────────────────── */
+    const glow = document.getElementById('hero-glow');
+    if (glow && window.matchMedia('(hover: hover)').matches) {
+      window.addEventListener('mousemove', e => {
+        const x = (e.clientX / window.innerWidth  - .5) * 22;
+        const y = (e.clientY / window.innerHeight - .5) * 22;
+        glow.style.transform = `translate(${x}px,${y}px)`;
+      }, { passive: true });
+    }
+
+    /* ── Mobile menu ───────────────────────────────────────────── */
+    const hamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    window.closeMobileMenu = function() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    /* ── Billing toggle ────────────────────────────────────────── */
+    const billingToggle = document.getElementById('billing-toggle');
+    const labelYearly   = document.getElementById('label-yearly');
+    const labelMonthly  = document.getElementById('label-monthly');
+    const servicesGrid  = document.getElementById('services-grid');
+    let   isMonthly     = false;
+
+    function updateBilling() {
+      billingToggle.classList.toggle('on', isMonthly);
+      billingToggle.setAttribute('aria-checked', String(isMonthly));
+      labelYearly.classList.toggle('active', !isMonthly);
+      labelMonthly.classList.toggle('active', isMonthly);
+      servicesGrid.classList.toggle('billing-monthly', isMonthly);
+
+      // show/hide monthly prices
+      document.querySelectorAll('.service-price-yearly').forEach(el => {
+        el.style.display = isMonthly ? 'none' : 'block';
+      });
+      document.querySelectorAll('.service-price-monthly').forEach(el => {
+        el.style.display = isMonthly ? 'block' : 'none';
+      });
+    }
+
+    billingToggle.addEventListener('click', () => {
+      isMonthly = !isMonthly;
+      updateBilling();
+    });
+    billingToggle.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        isMonthly = !isMonthly;
+        updateBilling();
+      }
+    });
+
+    /* ── FAQ accordion ─────────────────────────────────────────── */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Open clicked (if it wasn't already open)
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ── Escopos filter ────────────────────────────────────────── */
+    const filterBtns  = document.querySelectorAll('.filter-btn');
+    const escopoCards = document.querySelectorAll('.escopo-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        escopoCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    /* ── Contact form ──────────────────────────────────────────── */
+    const form        = document.getElementById('contact-form');
+    const submitBtn   = document.getElementById('form-submit');
+    const statusEl    = document.getElementById('form-status');
+    const mensagemEl  = document.getElementById('cf-mensagem');
+    const charCount   = document.getElementById('char-count');
+
+    mensagemEl.addEventListener('input', () => {
+      charCount.textContent = mensagemEl.value.length;
+    });
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+
+      const nome     = document.getElementById('cf-nome').value.trim();
+      const email    = document.getElementById('cf-email').value.trim();
+      const mensagem = mensagemEl.value.trim();
+
+      if (!nome || !email || !mensagem) {
+        statusEl.textContent = 'Por favor, preencha nome, e-mail e mensagem.';
+        statusEl.style.color = '#E05060';
+        return;
+      }
+
+      // Build WhatsApp message as fallback
+      const waText = encodeURIComponent(
+        `Olá, Advologos!\n\nNome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${mensagem}`
+      );
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando…';
+      statusEl.textContent = '';
+      statusEl.style.color = '';
+
+      // Attempt Formspree / netlify forms — if not configured, fall through to WA
+      try {
+        const res = await fetch('/__forms', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'contact', nome, email, whatsapp: document.getElementById('cf-whatsapp').value.trim(), mensagem }),
+        });
+        if (res.ok) {
+          statusEl.textContent = 'Mensagem enviada! Retornaremos em até 24h.';
+          statusEl.style.color = 'var(--crimson-lt)';
+          form.reset();
+          charCount.textContent = '0';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enviar mensagem';
+          return;
+        }
+      } catch (_) { /* fall through to WA */ }
+
+      // Fallback: redirect to WhatsApp
+      window.open(`https://wa.me/message/6MYA5WTYF5DEH1?text=${waText}`, '_blank');
+      statusEl.textContent = 'Redirecionando para o WhatsApp…';
+      statusEl.style.color = 'var(--crimson-lt)';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar mensagem';
+    });
+
+    /* ── Newsletter ────────────────────────────────────────────── */
+    document.getElementById('newsletter-submit').addEventListener('click', () => {
+      const emailVal = document.getElementById('newsletter-email').value.trim();
+      if (!emailVal || !emailVal.includes('@')) return;
+      // Stub — connect to Mailchimp / ConvertKit / etc.
+      document.getElementById('newsletter-email').value = '';
+      document.getElementById('newsletter-submit').textContent = 'Inscrito ✓';
+      setTimeout(() => {
+        document.getElementById('newsletter-submit').textContent = 'Inscrever';
+      }, 3000);
+    });
+
+  })();
+  </script>
+
+  <!-- Netlify Forms detection -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field">
+    <input name="nome">
+    <input name="email">
+    <input name="whatsapp">
+    <textarea name="mensagem"></textarea>
+  </form>
+
+</body>
+</html>
